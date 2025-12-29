@@ -1,0 +1,197 @@
+{
+    "uiux": [
+        {
+            "id": "hamburger-menu",
+            "name": "Hamburger Menu",
+            "icon": "☰",
+            "category": "UI/UX",
+            "definition": "A navigation icon with three horizontal lines that expands to show menu options when clicked.",
+            "useCase": "Mobile-first websites and apps where screen space is limited.",
+            "example": "Our mobile navigation uses a hamburger menu that slides in from the right.",
+            "prompt": "Add a hamburger menu for mobile navigation. It should have three horizontal lines that transform into an X when clicked. The menu should slide in from the right with a dark backdrop overlay. Include smooth animations and close when clicking outside or on a link.",
+            "difficulty": 2
+        },
+        {
+            "id": "glassmorphism",
+            "name": "Glassmorphism",
+            "icon": "🪟",
+            "category": "UI/UX",
+            "definition": "A design style using frosted glass effect with background blur and transparency.",
+            "useCase": "Modern UI cards, modals, and overlays for a premium aesthetic.",
+            "example": "Our project cards use glassmorphism with backdrop blur.",
+            "prompt": "Style this card with glassmorphism. Use background: rgba(255, 255, 255, 0.1), backdrop-filter: blur(10px), and a subtle border. Make it semi-transparent with a frosted glass appearance.",
+            "difficulty": 2
+        },
+        {
+            "id": "dark-mode",
+            "name": "Dark Mode",
+            "icon": "🌙",
+            "category": "UI/UX",
+            "definition": "A color scheme using dark backgrounds and light text to reduce eye strain.",
+            "useCase": "Apps used in low-light environments or for extended periods.",
+            "example": "Toggle between light and dark themes.",
+            "prompt": "Add dark mode toggle. Use CSS variables for colors. Create a button that switches between light/dark themes and saves preference to localStorage. Include smooth color transitions.",
+            "difficulty": 3
+        },
+        {
+            "id": "skeleton-loader",
+            "name": "Skeleton Loader",
+            "icon": "⏳",
+            "category": "UI/UX",
+            "definition": "A placeholder animation showing content structure while data loads.",
+            "useCase": "Improve perceived performance during data fetching.",
+            "example": "Show skeleton cards while projects load.",
+            "prompt": "Create skeleton loaders for the card grid. Show grey animated rectangles matching the card layout with a shimmer effect. Replace with actual content when data loads.",
+            "difficulty": 3
+        },
+        {
+            "id": "infinite-scroll",
+            "name": "Infinite Scroll",
+            "icon": "♾️",
+            "category": "UI/UX",
+            "definition": "Automatically load more content as user scrolls to the bottom.",
+            "useCase": "Social feeds, image galleries, product listings.",
+            "example": "Projects load automatically as you scroll down.",
+            "prompt": "Implement infinite scroll. Detect when user reaches bottom 200px of page, fetch next batch of items, append to list. Add loading indicator. Handle edge cases when no more content.",
+            "difficulty": 4
+        }
+    ],
+    "backend": [
+        {
+            "id": "api",
+            "name": "API (Application Programming Interface)",
+            "icon": "🔌",
+            "category": "Backend",
+            "definition": "A way for different software applications to communicate with each other.",
+            "useCase": "Fetching data from servers, integrating third-party services.",
+            "example": "Use GitHub API to fetch repository data.",
+            "prompt": "Create an API endpoint at /api/projects that returns JSON array of all projects. Include fields: id, name, description, url. Add error handling and CORS headers.",
+            "difficulty": 5
+        },
+        {
+            "id": "database",
+            "name": "Database",
+            "icon": "🗄️",
+            "category": "Backend",
+            "definition": "A structured system for storing and retrieving data.",
+            "useCase": "Persisting user data, products, content.",
+            "example": "Store user profiles in PostgreSQL database.",
+            "prompt": "Set up a Supabase database with a 'projects' table. Include columns: id (uuid), name (text), description (text), url (text), created_at (timestamp). Add row-level security policies.",
+            "difficulty": 4
+        },
+        {
+            "id": "authentication",
+            "name": "Authentication",
+            "icon": "🔐",
+            "category": "Backend",
+            "definition": "Verifying user identity through login credentials.",
+            "useCase": "User accounts, protected content, personalization.",
+            "example": "Email/password login with JWT tokens.",
+            "prompt": "Add authentication using Supabase Auth. Create login page with email/password fields. Implement signup, login, logout functions. Protect pages requiring authentication. Store user session.",
+            "difficulty": 6
+        },
+        {
+            "id": "webhook",
+            "name": "Webhook",
+            "icon": "🪝",
+            "category": "Backend",
+            "definition": "An HTTP callback that sends real-time data when an event occurs.",
+            "useCase": "Payment notifications, form submissions, Discord bots.",
+            "example": "Formspree webhook sends data when form is submitted.",
+            "prompt": "Set up a webhook endpoint at /api/webhook that receives POST requests. Verify the webhook signature, parse JSON payload, process the event, and return 200 status.",
+            "difficulty": 5
+        }
+    ],
+    "features": [
+        {
+            "id": "pwa",
+            "name": "PWA (Progressive Web App)",
+            "icon": "📱",
+            "category": "Features",
+            "definition": "A web app that can be installed on devices and work offline like native apps.",
+            "useCase": "Mobile-first experiences, offline functionality.",
+            "example": "Install divisionzero as an app on your phone.",
+            "prompt": "Convert this to a PWA. Create manifest.json with app name, icons (192x192, 512x512), theme color, and display: standalone. Add service worker for offline caching. Register service worker in main HTML.",
+            "difficulty": 4
+        },
+        {
+            "id": "search",
+            "name": "Search Functionality",
+            "icon": "🔍",
+            "category": "Features",
+            "definition": "Filter and find content using keywords.",
+            "useCase": "Large content libraries, e-commerce, documentation.",
+            "example": "Search projects by name or tags.",
+            "prompt": "Add real-time search. Create input field that filters results as user types. Search through title, description, and tags. Show 'no results' message when nothing matches. Debounce input for performance.",
+            "difficulty": 3
+        },
+        {
+            "id": "carousel",
+            "name": "Carousel",
+            "icon": "🎠",
+            "category": "Features",
+            "definition": "A horizontal scrolling component showing multiple items.",
+            "useCase": "Product showcases, image galleries, content discovery.",
+            "example": "Netflix-style project carousel with categories.",
+            "prompt": "Create a horizontal carousel. Add previous/next arrow buttons. Implement smooth scroll animation. Make items snap to grid. Support touch swipe on mobile. Show 3-4 items at once.",
+            "difficulty": 4
+        },
+        {
+            "id": "modal",
+            "name": "Modal/Dialog",
+            "icon": "📋",
+            "category": "Features",
+            "definition": "An overlay window that appears on top of page content.",
+            "useCase": "Forms, confirmations, detailed views.",
+            "example": "Click project to see details in modal.",
+            "prompt": "Create a modal component. Show dark backdrop overlay. Add close button (X) in top right. Close when clicking backdrop or pressing Escape key. Prevent body scroll when open. Add smooth fade-in animation.",
+            "difficulty": 2
+        },
+        {
+            "id": "form-validation",
+            "name": "Form Validation",
+            "icon": "✅",
+            "category": "Features",
+            "definition": "Checking user input is correct before submission.",
+            "useCase": "Contact forms, signups, data entry.",
+            "example": "Validate email format and required fields.",
+            "prompt": "Add form validation. Check required fields are filled. Validate email format with regex. Show error messages below invalid fields. Disable submit until form is valid. Prevent submission if errors exist.",
+            "difficulty": 3
+        }
+    ],
+    "concepts": [
+        {
+            "id": "prd",
+            "name": "PRD (Product Requirements Document)",
+            "icon": "📝",
+            "category": "Concepts",
+            "definition": "A document outlining what a product should do and why.",
+            "useCase": "Planning features before building.",
+            "example": "Write PRD before starting new project.",
+            "prompt": "Create a PRD for [feature]. Include: Problem statement, Target users, User stories, Acceptance criteria, Success metrics, Technical considerations, and Timeline estimates.",
+            "difficulty": 1
+        },
+        {
+            "id": "responsive-design",
+            "name": "Responsive Design",
+            "icon": "📐",
+            "category": "Concepts",
+            "definition": "Designing layouts that adapt to different screen sizes.",
+            "useCase": "Ensuring apps work on mobile, tablet, and desktop.",
+            "example": "Mobile-first design with media queries.",
+            "prompt": "Make this component responsive. Use flexbox/grid for layout. Add media queries for mobile (< 768px), tablet (< 1024px), and desktop. Stack elements vertically on mobile. Adjust font sizes and spacing.",
+            "difficulty": 3
+        },
+        {
+            "id": "seo",
+            "name": "SEO (Search Engine Optimization)",
+            "icon": "🔎",
+            "category": "Concepts",
+            "definition": "Optimizing website to rank higher in search results.",
+            "useCase": "Getting organic traffic from Google.",
+            "example": "Add meta tags and semantic HTML.",
+            "prompt": "Optimize this page for SEO. Add title tag, meta description, Open Graph tags. Use semantic HTML (header, main, article). Add alt text to images. Create descriptive URLs. Ensure fast load times.",
+            "difficulty": 2
+        }
+    ]
+}

@@ -1,0 +1,322 @@
+{
+    "_description": "Curated vibecoding toolkit - minimal, focused, easy to difficult path",
+    "_last_updated": "2024-12-11",
+    "_note": "No number 7 allowed! (the division zero pun)",
+    "_rating_system": {
+        "difficulty": "1-10 (1 = easiest, 10 = hardest). NO 7!",
+        "capability": "1-10 (1 = small projects, 10 = enterprise). NO 7!"
+    },
+    "ai_chatbots": {
+        "_order": "Easy to Advanced",
+        "tools": [
+            {
+                "id": "chatgpt",
+                "name": "ChatGPT",
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+                "website": "https://chat.openai.com",
+                "difficulty": 1,
+                "capability": 6,
+                "description": "Most beginner-friendly AI. Great starting point for vibecoding.",
+                "free_tier": true
+            },
+            {
+                "id": "gemini",
+                "name": "Gemini",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/googlegemini.svg",
+                "website": "https://gemini.google.com",
+                "difficulty": 2,
+                "capability": 8,
+                "description": "Google's AI. Fast, good with large codebases.",
+                "free_tier": true
+            },
+            {
+                "id": "claude",
+                "name": "Claude",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/anthropic.svg",
+                "website": "https://claude.ai",
+                "difficulty": 3,
+                "capability": 10,
+                "description": "Best for complex projects. Understands full architectures.",
+                "free_tier": true
+            }
+        ]
+    },
+    "code_editors": {
+        "_order": "Recommended first",
+        "tools": [
+            {
+                "id": "antigravity",
+                "name": "Antigravity",
+                "icon": "https://i.ibb.co/35Gpx28X/google-antigravity-logo.jpg",
+                "website": "https://antigravity.dev",
+                "difficulty": 4,
+                "capability": 10,
+                "description": "AI-native IDE. The future of coding. Our top pick.",
+                "free_tier": true
+            },
+            {
+                "id": "cursor",
+                "name": "Cursor",
+                "icon": "https://cdn.simpleicons.org/cursor/ffffff",
+                "website": "https://cursor.sh",
+                "difficulty": 3,
+                "capability": 9,
+                "description": "VS Code fork with AI superpowers. Very popular.",
+                "free_tier": true
+            },
+            {
+                "id": "windsurf",
+                "name": "Windsurf",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/codeium.svg",
+                "website": "https://codeium.com/windsurf",
+                "difficulty": 3,
+                "capability": 8,
+                "description": "Free AI IDE by Codeium. Great Cursor alternative.",
+                "free_tier": true
+            }
+        ]
+    },
+    "no_code_builders": {
+        "_order": "Recommended path",
+        "tools": [
+            {
+                "id": "google-ai-studio",
+                "name": "Google AI Studio",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/googlegemini.svg",
+                "website": "https://aistudio.google.com",
+                "difficulty": 1,
+                "capability": 6,
+                "description": "Surprisingly powerful AND easy. Best starting point for no-coders.",
+                "free_tier": true
+            },
+            {
+                "id": "v0",
+                "name": "v0.dev",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+                "website": "https://v0.dev",
+                "difficulty": 2,
+                "capability": 6,
+                "description": "Generate React components with prompts. By Vercel.",
+                "free_tier": true
+            },
+            {
+                "id": "bolt-new",
+                "name": "Bolt.new",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/stackblitz.svg",
+                "website": "https://bolt.new",
+                "difficulty": 2,
+                "capability": 8,
+                "description": "Full-stack app generator. Very fast results.",
+                "free_tier": true
+            },
+            {
+                "id": "lovable",
+                "name": "Lovable",
+                "icon": "https://lovable.dev/favicon.ico",
+                "website": "https://lovable.dev",
+                "difficulty": 2,
+                "capability": 8,
+                "description": "AI app builder. Clean, modern outputs.",
+                "free_tier": true
+            },
+            {
+                "id": "base44",
+                "name": "Base44",
+                "icon": "https://base44.com/favicon.ico",
+                "website": "https://base44.com",
+                "difficulty": 3,
+                "capability": 8,
+                "description": "Build full apps without code. Great for MVPs.",
+                "free_tier": true
+            },
+            {
+                "id": "replit",
+                "name": "Replit",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/replit.svg",
+                "website": "https://replit.com",
+                "difficulty": 2,
+                "capability": 8,
+                "description": "Browser-based IDE. Code, run, deploy from anywhere. AI agent built-in.",
+                "free_tier": true
+            }
+        ]
+    },
+    "frontend": {
+        "_order": "Learn these in order",
+        "tools": [
+            {
+                "id": "react",
+                "name": "React",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+                "website": "https://react.dev",
+                "difficulty": 4,
+                "capability": 9,
+                "description": "The most popular frontend library. Learn this first.",
+                "free_tier": true
+            },
+            {
+                "id": "nextjs",
+                "name": "Next.js",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+                "website": "https://nextjs.org",
+                "difficulty": 5,
+                "capability": 10,
+                "description": "React framework with everything built-in. Production ready.",
+                "free_tier": true
+            }
+        ]
+    },
+    "backend": {
+        "_order": "Pick one based on preference",
+        "tools": [
+            {
+                "id": "nodejs",
+                "name": "Node.js",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+                "website": "https://nodejs.org",
+                "difficulty": 4,
+                "capability": 10,
+                "description": "JavaScript on the server. Same language front and back.",
+                "free_tier": true
+            },
+            {
+                "id": "fastapi",
+                "name": "FastAPI",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+                "website": "https://fastapi.tiangolo.com",
+                "difficulty": 5,
+                "capability": 9,
+                "description": "Python API framework. Super fast, great docs.",
+                "free_tier": true
+            }
+        ]
+    },
+    "database": {
+        "_note": "No-code friendly databases",
+        "tools": [
+            {
+                "id": "supabase",
+                "name": "Supabase",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+                "website": "https://supabase.com",
+                "difficulty": 2,
+                "capability": 9,
+                "description": "Firebase alternative. Free tier is amazing. Even no-coders can use it!",
+                "free_tier": true,
+                "no_code_friendly": true
+            },
+            {
+                "id": "firebase",
+                "name": "Firebase",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
+                "website": "https://firebase.google.com",
+                "difficulty": 3,
+                "capability": 9,
+                "description": "Google's backend platform. Great for real-time apps.",
+                "free_tier": true,
+                "no_code_friendly": true
+            }
+        ]
+    },
+    "hosting": {
+        "_note": "Keep it simple",
+        "tools": [
+            {
+                "id": "vercel",
+                "name": "Vercel",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+                "website": "https://vercel.com",
+                "difficulty": 1,
+                "capability": 10,
+                "description": "One-click deploy. Best for Next.js. Free tier is generous.",
+                "free_tier": true
+            },
+            {
+                "id": "netlify",
+                "name": "Netlify",
+                "icon": "https://cdn.jsdelivr.net/npm/simple-icons@11/icons/netlify.svg",
+                "website": "https://netlify.com",
+                "difficulty": 1,
+                "capability": 9,
+                "description": "Drag and drop deploy. Perfect for static sites.",
+                "free_tier": true
+            }
+        ]
+    },
+    "design": {
+        "_note": "AI-powered design tools",
+        "tools": [
+            {
+                "id": "midjourney",
+                "name": "Midjourney",
+                "icon": "https://i.ibb.co/Mk7m8W9t/61396273.png",
+                "website": "https://midjourney.com",
+                "difficulty": 2,
+                "capability": 9,
+                "description": "Best AI image generator. Stunning visuals.",
+                "free_tier": false
+            },
+            {
+                "id": "dalle",
+                "name": "DALL-E",
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+                "website": "https://openai.com/dall-e-3",
+                "difficulty": 1,
+                "capability": 8,
+                "description": "OpenAI's image generator. Built into ChatGPT.",
+                "free_tier": true
+            }
+        ]
+    },
+    "utilities": {
+        "_note": "Essential developer tools",
+        "tools": [
+            {
+                "id": "github",
+                "name": "GitHub",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+                "website": "https://github.com",
+                "difficulty": 3,
+                "capability": 10,
+                "description": "Code hosting. Essential for version control and collaboration.",
+                "free_tier": true
+            },
+            {
+                "id": "notion",
+                "name": "Notion",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg",
+                "website": "https://notion.so",
+                "difficulty": 1,
+                "capability": 6,
+                "description": "Docs, notes, project management. All-in-one workspace.",
+                "free_tier": true
+            },
+            {
+                "id": "postman",
+                "name": "Postman",
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+                "website": "https://postman.com",
+                "difficulty": 3,
+                "capability": 8,
+                "description": "API testing tool. Debug your backend easily.",
+                "free_tier": true
+            },
+            {
+                "id": "linear",
+                "name": "Linear",
+                "icon": "https://linear.app/favicon.ico",
+                "website": "https://linear.app",
+                "difficulty": 2,
+                "capability": 8,
+                "description": "Modern issue tracking. Beautiful and fast.",
+                "free_tier": true
+            }
+        ]
+    },
+    "_summary": {
+        "total_tools": 23,
+        "categories": 9,
+        "philosophy": "Less is more. Curated path from easy to advanced.",
+        "no_seven_rule": "No difficulty or capability = 7. Division Zero pun!"
+    }
+}

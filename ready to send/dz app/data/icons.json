@@ -1,0 +1,74 @@
+{
+    "tools": [
+        {
+            "name": "Claude",
+            "icon": "https://cdn.simpleicons.org/anthropic/ffffff"
+        },
+        {
+            "name": "ChatGPT",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+        },
+        {
+            "name": "Cursor",
+            "icon": "https://cdn.simpleicons.org/cursor/ffffff"
+        },
+        {
+            "name": "VS Code",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+        },
+        {
+            "name": "Replit",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/replit/replit-original.svg"
+        }
+    ],
+    "stacks": [
+        {
+            "name": "React",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+        },
+        {
+            "name": "Next.js",
+            "icon": "https://cdn.simpleicons.org/nextdotjs/ffffff"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+        },
+        {
+            "name": "TailwindCSS",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+        },
+        {
+            "name": "Supabase",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+        },
+        {
+            "name": "Firebase",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
+        },
+        {
+            "name": "Vercel",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+        },
+        {
+            "name": "GitHub",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+        },
+        {
+            "name": "Node.js",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+        },
+        {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+        },
+        {
+            "name": "PostgreSQL",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        }
+    ]
+}

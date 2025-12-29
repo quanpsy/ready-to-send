@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- ============================================
+         Division Zero - Home Page
+         ============================================
+         This is the main landing page.
+         
+         SECTIONS:
+         1. Hero - Main title + CTA buttons
+         2. Features - What we offer
+         3. Model - How it works
+         4. Stats - Key numbers
+         5. Join - Call to action
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="divisionzero - Where ideas become reality through AI. Discover vibecoding projects, tools, and resources for building with AI assistants.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="divisionzero - Vibecoding Community">
+    <meta property="og:description"
+        content="Where ideas become reality through AI. Discover vibecoding projects and tools.">
+    <meta property="og:type" content="website">
+
+    <title>divisionzero - Where Ideas Become Reality Through AI</title>
+
+    <!-- Favicon (using white-logo.svg to save edge request) -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/white-logo.svg">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/assets/images/white-logo.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ========================================
+         CSS FILES
+         Load order matters! Foundation first.
+         ======================================== -->
+
+    <!-- Foundation -->
+    <!-- Layout -->
+    <!-- Components -->
+    <!-- Pods -->
+    <!-- Utils -->
+    
+    <!-- CSS Bundle -->
+    <link rel="stylesheet" href="styles.min.css">
+
+    <!-- SPA Page Styles -->
+    <style>
+        .spa-page { display: none; }
+        .spa-page.active { display: block; }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (global) -->
+    <div id="nav-placeholder" data-page="home"></div>
+
+    <!-- SPA PAGES CONTAINER -->
+    <main id="spa-app">
+
+    <!-- PAGE: HOME -->
+    <div id="page-home" class="spa-page active" style="display: block;">
+        <!-- ========================================
+         NAVIGATION
+         Rendered by JavaScript (nav.js)
+         data-page: Sets active nav link
+         ======================================== -->
+    
+
+
+    <!-- ========================================
+         HERO SECTION
+         Main title, subtitle, CTA buttons, logo
+         ======================================== -->
+    <section class="hero">
+
+        <!-- Background glow effect -->
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="hero-content">
+
+                <!-- TEXT COLUMN -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Vibecoding</span><br>
+                        Is Art
+                    </h1>
+                    <p class="hero-subtitle">
+                        This is what happens when curiosity meets AI. Join
+                        thousands of vibecoders building what others can't imagine.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="projects.html" class="btn-primary btn-large">
+                            Explore Projects
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="tools.html" class="btn-secondary btn-large">
+                            View Tools
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LOGO COLUMN -->
+                <div class="hero-logo">
+                    <img src="assets/images/white-logo.svg" alt="divisionzero logo" class="logo-hero">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-line"></div>
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FEATURES SECTION
+         What divisionzero offers
+         ======================================== -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Section header -->
+            <div class="section-header">
+                <span class="section-tag">Start Here</span>
+                <h2 class="section-title">Everything You Need to <span class="gradient-text">Start Building</span></h2>
+                <p class="section-description">
+                    From inspiration to deployment, we've got you covered.
+                </p>
+            </div>
+
+            <!-- Features grid -->
+            <div class="features-grid">
+
+                <!-- Feature 1: Browse & Learn -->
+                <div class="feature-card glass">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Browse & Learn</h3>
+                    <p class="feature-description">
+                        Explore hundreds of projects built by vibecoders. See what's possible
+                        and get inspired for your own creations.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Tools Guide -->
+                <div class="feature-card glass">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Tools Guide</h3>
+                    <p class="feature-description">
+                        Curated list of AI tools, frameworks, and platforms. Know exactly
+                        which tools to use for your project.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Vibecoder's Dictionary -->
+                <div class="feature-card glass">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Vibecoder's Dictionary</h3>
+                    <p class="feature-description">
+                        Learn the language. Every term you need to know, with AI prompts
+                        to help you implement them.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         MODEL SECTION
+         How vibecoding works
+         ======================================== -->
+    <section class="section section-dark">
+        <div class="container">
+
+            <!-- Section header -->
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Build Without <span class="gradient-text">Writing Code</span></h2>
+            </div>
+
+            <!-- Model grid -->
+            <div class="model-grid">
+
+                <!-- Step 1 -->
+                <div class="model-card glass">
+                    <span class="model-number">01</span>
+                    <h3 class="model-title">Describe Your Idea</h3>
+                    <p class="model-description">
+                        Tell an AI what you want to build in plain English.
+                        <strong>"Make me a task manager with categories and due dates."</strong>
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="model-card glass">
+                    <span class="model-number">02</span>
+                    <h3 class="model-title">AI Writes the Code</h3>
+                    <p class="model-description">
+                        Claude, ChatGPT, or Cursor generates working code.
+                        <strong>You iterate by describing what to change.</strong>
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="model-card glass">
+                    <span class="model-number">03</span>
+                    <h3 class="model-title">Deploy & Share</h3>
+                    <p class="model-description">
+                        Push to Vercel or Netlify with one click.
+                        <strong>Your app is live for the world to use.</strong>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         STATS SECTION
+         Key numbers
+         ======================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid">
+
+                <div class="stat-item">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Code Experience Required</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Community</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         JOIN SECTION
+         Call to action
+         ======================================== -->
+    <section class="section section-dark">
+        <div class="container">
+
+            <div class="join-card">
+                <img src="assets/images/white-logo.svg" alt="divisionzero" class="join-logo">
+                <h2 class="join-title">Join <span class="gradient-text">divisionzero</span></h2>
+                <p class="join-description">
+                    Connect with vibecoders, share your projects, get feedback,
+                    and build together. The community is waiting for you.
+                </p>
+                <div class="join-cta">
+                    <a href="https://discord.gg/SXJS4S7jUE" target="_blank" rel="noopener noreferrer"
+                        class="btn-primary btn-large">
+                        Join Discord
+                        <span class="btn-icon">→</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         VOCABULARY TERM ROWS
+         3 scrolling rows with tooltips
+         ======================================== -->
+    <section class="term-scroll-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Learn the Language</span>
+                <h2 class="section-title">Vibecoder <span class="gradient-text">Vocabulary</span></h2>
+            </div>
+        </div>
+        <div class="term-scroll-container" id="term-scroll-container">
+            <!-- Term rows rendered by JS -->
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         STACK LOGO LOOP
+         Infinite scrolling tool icons (decorative)
+         ======================================== -->
+    <section class="logo-scroll-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-description" style="margin-bottom: 0;">
+                    Built with the tools you love
+                </p>
+            </div>
+        </div>
+        <div class="logo-scroll-wrapper">
+            <div class="logo-scroll-track" id="logo-scroll-track">
+                <!-- Logos rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         FOOTER
+         Rendered by JavaScript (footer.js)
+         ======================================== -->
+    
+
+
+    <!-- ========================================
+         JAVASCRIPT FILES
+         Load order: config → utils → components → pods → pages
+         ======================================== -->
+
+    <!-- Config & Utilities -->
+    
+    
+
+    <!-- Components -->
+    
+    
+
+    <!-- Pods -->
+    
+
+    <!-- Page Script -->
+    
+
+    <!-- Mobile Spotlight -->
+    </div>
+
+    <!-- PAGE: PROJECTS -->
+    <div id="page-projects" class="spa-page " style="display: none;">
+        <!-- NAVIGATION -->
+    
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="projects-header">
+                <h1 class="projects-title">
+                    <span class="gradient-text">Vibecoding</span> Projects
+                </h1>
+                <p class="projects-subtitle">
+                    Discover apps built by vibecoders using AI. Get inspired, learn from others,
+                    and share your own creations.
+                </p>
+                <a href="#" id="full-projects-link" class="hero-external-link">
+                    For more projects →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         SEARCH & FILTERS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Search input -->
+            <div class="dictionary-controls">
+                <input type="text" id="project-search" class="search-input"
+                    placeholder="Search projects by name, description, or tech...">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         PROJECTS CONTAINER
+         Categories and carousels rendered here by JS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container-lg" id="projects-container">
+            <!-- Carousels inserted by projects.js -->
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    
+
+
+    <!-- JavaScript Files -->
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Set external link from config -->
+    
+
+    <!-- Mobile Spotlight -->
+    </div>
+
+    <!-- PAGE: TOOLS -->
+    <div id="page-tools" class="spa-page " style="display: none;">
+        <!-- NAVIGATION -->
+    
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="tools-hero">
+        <div class="container">
+            <div class="tools-header-content">
+                <h1 class="tools-main-title">
+                    The <span class="gradient-text">Vibecoder's</span> Toolkit
+                </h1>
+                <p class="tools-subtitle">
+                    Everything you need to build apps without writing code.
+                    From AI assistants to deployment platforms.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         TOOLS CONTAINER
+         Categories and cards rendered here by JS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container" id="tools-container">
+            <!-- Tool categories inserted by tools.js -->
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    
+
+
+    <!-- JavaScript Files -->
+    
+    
+    
+    
+    
+    
+
+    <!-- Mobile Spotlight -->
+    </div>
+
+    <!-- PAGE: DICTIONARY -->
+    <div id="page-dictionary" class="spa-page " style="display: none;">
+        <!-- NAVIGATION -->
+    
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="dictionary-hero">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">
+                    <span class="gradient-text">Vibecoder's</span> Dictionary
+                </h1>
+                <p class="section-description">
+                    Learn the language of modern web development.
+                    Every term comes with an AI prompt to help you implement it.
+                </p>
+                <a href="#" id="full-library-link" class="hero-external-link">
+                    Our library →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         SEARCH
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="dictionary-controls">
+                <input type="text" id="term-search" class="search-input" placeholder="Search terms...">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         TERMS CONTAINER
+         Cards rendered here by JS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container" id="terms-container">
+            <!-- Term cards inserted by dictionary.js -->
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         TERM MODAL
+         Opened when clicking a term card
+         ======================================== -->
+    <div class="modal term-modal" id="term-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass">
+            <!-- Content inserted by dictionary.js -->
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    
+
+
+    <!-- JavaScript Files -->
+    
+    
+    
+    
+    
+    
+
+    <!-- Set external link from config -->
+    
+
+    <!-- Mobile Spotlight -->
+    </div>
+
+    <!-- PAGE: SUBMIT -->
+    <div id="page-submit" class="spa-page " style="display: none;">
+        <!-- NAVIGATION -->
+    
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="submit-hero">
+        <div class="container">
+            <div class="submit-header">
+                <h1 class="submit-title">
+                    Share Your <span class="gradient-text">Creation</span>
+                </h1>
+                <p class="submit-subtitle">
+                    Built something cool? Have an idea for the community?
+                    We'd love to hear from you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         FORM SECTION
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="form-container">
+
+                <!-- FORM TOGGLE -->
+                <div class="form-toggle">
+                    <button type="button" class="toggle-btn active" data-form="project">
+                        Submit Project
+                    </button>
+                    <button type="button" class="toggle-btn" data-form="idea">
+                        Submit Idea
+                    </button>
+                </div>
+
+
+                <!-- ========================================
+                     PROJECT FORM
+                     ======================================== -->
+                <form id="project-form" class="form-card glass">
+
+                    <div class="form-header">
+                        <h2>Submit Your Project</h2>
+                        <p>Share your vibecoding creation with the community</p>
+                    </div>
+
+                    <!-- BASIC INFO SECTION -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Basic Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project-name">Project Name *</label>
+                                <input type="text" id="project-name" name="name" required maxlength="20"
+                                    placeholder="e.g., TaskFlow Pro">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-url">Live URL *</label>
+                                <input type="url" id="project-url" name="url" required
+                                    placeholder="https://your-app.vercel.app">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-description">Description *</label>
+                            <textarea id="project-description" name="description" required maxlength="90"
+                                placeholder="What does your project do? What problem does it solve?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-logo">Logo (ImgBB HTML) *</label><textarea id="project-logo" name="logo" required rows="2" placeholder="Paste full HTML from ImgBB: <a href=...><img src=...></a>"></textarea><span class="form-hint">Upload to imgbb.com ? Copy "HTML full linked" ? Paste here</span>
+                        </div>
+                    </div>
+                    <!-- BUILDER INFO ROW -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="builder-name">Your Username / Handle *</label>
+                            <input type="text" id="builder-name" name="builderName" required placeholder="vibecoder1">
+                            <span class="form-hint">This will show as @username on your project card</span>
+                        </div>
+                    </div>
+                    <!-- LINKS SECTION -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Links (Optional)</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project-github">GitHub Repository</label>
+                                <input type="url" id="project-github" name="github"
+                                    placeholder="https://github.com/you/repo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-discord">Your Discord Username</label>
+                                <input type="text" id="project-discord" name="discord"
+                                    placeholder="username#1234 or @username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-profile">Personal Profile URL</label>
+                            <input type="url" id="project-profile" name="profileUrl"
+                                placeholder="https://linkedin.com/in/yourname or https://yourwebsite.com">
+                            <span class="form-hint">LinkedIn, personal website, or portfolio link</span>
+                        </div>
+                    </div>
+
+                    <!-- TECH SECTION -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Technology</h3>
+
+                        <div class="form-group">
+                            <label>AI Tools Used</label>
+                            <div class="tile-grid" data-max-select="5" data-input-name="tools">
+                                <div class="tile" data-value="Claude">Claude</div>
+                                <div class="tile" data-value="ChatGPT">ChatGPT</div>
+                                <div class="tile" data-value="Gemini">Gemini</div>
+                                <div class="tile" data-value="Cursor">Cursor</div>
+                                <div class="tile" data-value="v0.dev">v0.dev</div>
+                                <div class="tile" data-value="Bolt.new">Bolt.new</div>
+                                <div class="tile" data-value="Lovable">Lovable</div>
+                                <div class="tile" data-value="Replit">Replit</div>
+                            </div>
+                            <input type="hidden" name="tools" value="">
+                            <span class="form-hint">Select up to 5</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tech Stack</label>
+                            <div class="tile-grid" data-max-select="5" data-input-name="tags">
+                                <div class="tile" data-value="React">React</div>
+                                <div class="tile" data-value="Next.js">Next.js</div>
+                                <div class="tile" data-value="Vue.js">Vue.js</div>
+                                <div class="tile" data-value="TypeScript">TypeScript</div>
+                                <div class="tile" data-value="JavaScript">JavaScript</div>
+                                <div class="tile" data-value="Node.js">Node.js</div>
+                                <div class="tile" data-value="Python">Python</div>
+                                <div class="tile" data-value="Supabase">Supabase</div>
+                                <div class="tile" data-value="Firebase">Firebase</div>
+                                <div class="tile" data-value="MongoDB">MongoDB</div>
+                                <div class="tile" data-value="PostgreSQL">PostgreSQL</div>
+                                <div class="tile" data-value="TailwindCSS">TailwindCSS</div>
+                            </div>
+                            <input type="hidden" name="tags" value="">
+                            <span class="form-hint">Select up to 5</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-category">Category *</label>
+                            <select id="project-category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="Productivity">Productivity</option>
+                                <option value="Developer Tools">Developer Tools</option>
+                                <option value="Design">Design</option>
+                                <option value="Games">Games</option>
+                                <option value="AI Agents">AI Agents</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- PRICING MODEL -->
+                    <div class="form-group">
+                        <label for="project-pricing">Pricing Model *</label>
+                        <select id="project-pricing" name="pricingModel" required>
+                            <option value="">Select pricing model</option>
+                            <option value="free">Completely Free (all tools have free tier)</option>
+                            <option value="partial">Partially Paid (mix of free and paid tools)</option>
+                            <option value="paid">Fully Paid (no free tier available)</option>
+                        </select>
+                        <span class="form-hint">This helps users know if they need paid subscriptions to recreate
+                            this</span>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <button type="submit" class="btn-submit">
+                        Submit Project
+                    </button>
+
+                </form>
+
+
+                <!-- ========================================
+                     IDEA FORM
+                     ======================================== -->
+                <form id="idea-form" class="form-card glass hidden">
+
+                    <div class="form-header">
+                        <h2>Submit an Idea</h2>
+                        <p>Got an idea for the community? Let us know!</p>
+                    </div>
+
+                    <div class="form-section">
+
+                        <!-- Contact Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="idea-name">Your Name *</label>
+                                <input type="text" id="idea-name" name="name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idea-email">Email *</label>
+                                <input type="email" id="idea-email" name="email" required
+                                    placeholder="john@example.com">
+                                <span class="form-hint">We'll use this to contact you</span>
+                            </div>
+                        </div>
+
+                        <!-- Idea Title -->
+                        <div class="form-group">
+                            <label for="idea-title">Idea Title *</label>
+                            <input type="text" id="idea-title" name="title" required
+                                placeholder="e.g., AI-powered task manager">
+                        </div>
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label for="idea-category">Category</label>
+                            <select id="idea-category" name="category">
+                                <option value="">Select category</option>
+                                <option value="app">App</option>
+                                <option value="game">Game</option>
+                                <option value="tool">Tool</option>
+                                <option value="website">Website</option>
+                                <option value="extension">Extension</option>
+                                <option value="bot">Bot</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Docs Link -->
+                        <div class="form-group">
+                            <label for="idea-docs">Idea Document Link *</label>
+                            <input type="url" id="idea-docs" name="docsLink" required
+                                placeholder="https://docs.google.com/document/d/...">
+                            <span class="form-hint">Paste your Google Docs, Notion, or any document link with your idea
+                                details</span>
+                        </div>
+
+                        <!-- Purpose -->
+                        <div class="form-group">
+                            <label for="idea-purpose">Purpose of Submission *</label>
+                            <select id="idea-purpose" name="purpose" required>
+                                <option value="">Select purpose</option>
+                                <option value="validation">Just for Validation / Feedback</option>
+                                <option value="client">I'm a Client (Looking to build this)</option>
+                            </select>
+                        </div>
+
+                        <!-- Budget (shown only when purpose is "client") -->
+                        <div class="form-group budget-group hidden">
+                            <label for="idea-budget">Budget (USD) *</label>
+                            <div class="budget-input-wrapper">
+                                <span class="budget-currency">$</span>
+                                <input type="number" id="idea-budget" name="budget" min="0"
+                                    placeholder="Enter your budget">
+                            </div>
+                            <span class="form-hint">Your approximate budget for this project</span>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Submit Idea
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    
+
+
+    <!-- JavaScript Files -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Mobile Spotlight -->
+    </div>
+
+    </main>
+
+    <!-- FOOTER (global) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JS Bundle -->
+    <script src="app.min.js"></script>
+
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW error:', err));
+            });
+        }
+    </script>
+</body>
+</html>
