@@ -1,0 +1,274 @@
+/* ============================================
+   glow.css - Background Glow Effects
+   ============================================
+   
+   ✨ REUSABLE GLOW EFFECTS
+   
+   Glow appears BEHIND elements, not as borders.
+   Works on cards, buttons, modals, and any container.
+   
+   USAGE:
+   1. Add class to element: class="glow-card" or "glow-btn"
+   2. Set custom glow color: style="--glow-color: #8b5cf6"
+   3. For modals, use class="glow-modal"
+   
+   Available classes:
+   - .glow-card      (for project cards, feature cards)
+   - .glow-btn       (for buttons)
+   - .glow-modal     (for modals/popups)
+   - .glow-pill      (for small pills/badges)
+   - .glow-always    (always visible, not just on hover)
+   
+   ============================================ */
+
+
+/* ========================================
+   BASE GLOW VARIABLES
+   ======================================== */
+:root {
+    --glow-color: #8b5cf6;
+    /* Default purple glow */
+    --glow-color-cyan: #06b6d4;
+    /* Cyan option */
+    --glow-color-pink: #ec4899;
+    /* Pink option */
+    --glow-color-green: #10b981;
+    /* Green option */
+    --glow-color-orange: #f97316;
+    /* Orange option */
+}
+
+
+/* ========================================
+   GLOW CARD
+   ----------------------------------------
+   For project cards, feature cards, etc.
+   ======================================== */
+.glow-card {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.glow-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Background glow layer - behind everything */
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--glow-color, #8b5cf6);
+    filter: blur(18px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.glow-card:hover::before {
+    opacity: 0.35;
+}
+
+
+/* ========================================
+   GLOW BUTTON
+   ----------------------------------------
+   For primary/accent buttons
+   ======================================== */
+.glow-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.glow-btn::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: var(--glow-color, #8b5cf6);
+    filter: blur(12px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.glow-btn:hover::before {
+    opacity: 0.4;
+}
+
+/* Glow button with pulsing animation */
+.glow-btn.glow-pulse::before {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+/* ========================================
+   GLOW MODAL
+   ----------------------------------------
+   For modals and popups
+   ======================================== */
+.glow-modal {
+    position: relative;
+}
+
+.glow-modal::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    background: var(--glow-color, #8b5cf6);
+    filter: blur(25px);
+    opacity: 0.25;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   GLOW PILL
+   ----------------------------------------
+   For small pills, badges, tags
+   ======================================== */
+.glow-pill {
+    position: relative;
+}
+
+.glow-pill::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--glow-color, #8b5cf6);
+    filter: blur(8px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.glow-pill:hover::before {
+    opacity: 0.4;
+}
+
+
+/* ========================================
+   ALWAYS VISIBLE GLOW
+   ----------------------------------------
+   Add .glow-always for permanent glow
+   ======================================== */
+.glow-always::before {
+    opacity: 0.25 !important;
+}
+
+.glow-always:hover::before {
+    opacity: 0.45 !important;
+}
+
+
+/* ========================================
+   GLOW COLOR MODIFIERS
+   ----------------------------------------
+   Use these classes to change glow color
+   ======================================== */
+.glow-purple {
+    --glow-color: #8b5cf6;
+}
+
+.glow-cyan {
+    --glow-color: #06b6d4;
+}
+
+.glow-pink {
+    --glow-color: #ec4899;
+}
+
+.glow-green {
+    --glow-color: #10b981;
+}
+
+.glow-orange {
+    --glow-color: #f97316;
+}
+
+.glow-white {
+    --glow-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ========================================
+   GLOW INTENSITY MODIFIERS
+   ======================================== */
+.glow-soft::before {
+    filter: blur(25px);
+    opacity: 0.2;
+}
+
+.glow-soft:hover::before {
+    opacity: 0.3;
+}
+
+.glow-intense::before {
+    filter: blur(12px);
+}
+
+.glow-intense:hover::before {
+    opacity: 0.5;
+}
+
+
+/* ========================================
+   GLOW WRAPPER PATTERN
+   ----------------------------------------
+   Use this pattern when you need the glow
+   to work with existing card content.
+   
+   <div class="glow-wrapper" style="--glow-color: #8b5cf6">
+       <div class="card-content">...</div>
+   </div>
+   ======================================== */
+.glow-wrapper {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.glow-wrapper:hover {
+    transform: translateY(-6px);
+}
+
+.glow-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--glow-color, #8b5cf6);
+    filter: blur(18px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: 0.75rem;
+    pointer-events: none;
+}
+
+.glow-wrapper:hover::before {
+    opacity: 0.35;
+}
+
+/* Content sits above the glow */
+.glow-wrapper>* {
+    position: relative;
+    z-index: 1;
+}

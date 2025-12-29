@@ -1,0 +1,355 @@
+/* ============================================
+   forms.css - Form Styles
+   ============================================
+   
+   📝 FORM ELEMENTS
+   
+   Styles for:
+   - Text inputs
+   - Textareas
+   - Select dropdowns
+   - Form groups/rows
+   - Form sections
+   - Validation states
+   - Tile/chip selectors
+   
+   ============================================ */
+
+
+/* ========================================
+   FORM CONTAINER
+   ----------------------------------------
+   Wrapper for entire form
+   ======================================== */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   FORM CARD
+   ----------------------------------------
+   Glass card containing form
+   ======================================== */
+.form-card {
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-header h2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-header p {
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================
+   FORM SECTION
+   ----------------------------------------
+   Groups related fields together
+   ======================================== */
+.form-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.form-section-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary-light);
+}
+
+
+/* ========================================
+   FORM ROW
+   ----------------------------------------
+   Two fields side by side
+   ======================================== */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   FORM GROUP
+   ----------------------------------------
+   Label + Input + Hint wrapper
+   ======================================== */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   TEXT INPUTS
+   ----------------------------------------
+   Standard text input fields
+   ======================================== */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-base);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+
+/* ========================================
+   TEXTAREA
+   ----------------------------------------
+   Multi-line text input
+   ======================================== */
+textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+    transition: all var(--transition-base);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+
+/* ========================================
+   SELECT DROPDOWN
+   ----------------------------------------
+   Styled dropdown with dark theme
+   ======================================== */
+select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    padding-right: 2.5rem;
+    background-color: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+    transition: all var(--transition-base);
+}
+
+select:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: #1f1f3a;
+}
+
+/* Style the dropdown options - Dark themed */
+select option {
+    background-color: #1a1a2e;
+    color: #f4f4f5;
+    padding: 0.75rem 1rem;
+}
+
+select option:hover,
+select option:checked {
+    background-color: #2d2d4a;
+}
+
+/* Placeholder styling for select */
+select option[value=""] {
+    color: #71717a;
+}
+
+
+/* ========================================
+   FORM HINT
+   ----------------------------------------
+   Helper text below inputs
+   ======================================== */
+.form-hint {
+    display: block;
+    margin-top: var(--spacing-xs);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+.form-hint.warning-text {
+    color: var(--color-warning);
+}
+
+
+/* ========================================
+   TILE/CHIP SELECTOR
+   ----------------------------------------
+   Selectable buttons for multi-select
+   ======================================== */
+.tile-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.tile {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    user-select: none;
+}
+
+.tile:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text-primary);
+}
+
+.tile.selected {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: var(--color-primary);
+    color: var(--color-primary-light);
+}
+
+
+/* ========================================
+   FORM TOGGLE (Switch)
+   ----------------------------------------
+   Tab-like toggle buttons
+   ======================================== */
+.form-toggle {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem;
+    border-radius: var(--radius-md);
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.toggle-btn:hover {
+    color: var(--color-text-primary);
+}
+
+.toggle-btn.active {
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   COLOR PICKER
+   ----------------------------------------
+   Color input wrapper
+   ======================================== */
+.color-picker-wrapper {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.color-picker-wrapper input[type="text"] {
+    flex: 1;
+}
+
+.color-picker-wrapper input[type="color"] {
+    width: 50px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+
+/* ========================================
+   VALIDATION STATES
+   ======================================== */
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+    border-color: var(--color-error);
+}
+
+.form-group.error .form-hint {
+    color: var(--color-error);
+}
+
+.form-group.success input,
+.form-group.success textarea {
+    border-color: var(--color-success);
+}

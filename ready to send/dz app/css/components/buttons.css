@@ -1,0 +1,171 @@
+/* ============================================
+   buttons.css - Button Styles
+   ============================================
+   
+   🔘 ALL BUTTON VARIATIONS
+   
+   Two main styles:
+   - btn-primary: Gradient background (main CTA)
+   - btn-secondary: Outline style (secondary actions)
+   
+   Size modifier:
+   - btn-large: Bigger buttons for hero sections
+   
+   USAGE:
+   <a href="#" class="btn-primary">Click Me</a>
+   <button class="btn-secondary btn-large">Learn More</button>
+   
+   ============================================ */
+
+
+/* ========================================
+   BASE BUTTON STYLES
+   ----------------------------------------
+   Shared styles for all buttons
+   ======================================== */
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    /* For ripple effect */
+}
+
+
+/* ========================================
+   PRIMARY BUTTON
+   ----------------------------------------
+   Gradient background, white text
+   Used for main calls to action
+   ======================================== */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   SECONDARY BUTTON
+   ----------------------------------------
+   Transparent with border
+   Used for secondary actions
+   ======================================== */
+.btn-secondary {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ========================================
+   LARGE BUTTON
+   ----------------------------------------
+   Bigger size for hero sections
+   ======================================== */
+.btn-large {
+    padding: 1.125rem 2rem;
+    font-size: 1.05rem;
+}
+
+
+/* ========================================
+   BUTTON ICON
+   ----------------------------------------
+   Arrow icon that moves on hover
+   ======================================== */
+.btn-icon {
+    transition: transform var(--transition-base);
+}
+
+.btn-primary:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   RIPPLE EFFECT
+   ----------------------------------------
+   Click animation (added via JavaScript)
+   ======================================== */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   SUBMIT BUTTON (Forms)
+   ----------------------------------------
+   Full-width button for forms
+   ======================================== */
+.btn-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-hover);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ========================================
+   RESPONSIVE - Mobile
+   ======================================== */
+@media (max-width: 640px) {
+    .btn-large {
+        width: 100%;
+        justify-content: center;
+    }
+}

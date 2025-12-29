@@ -1,0 +1,336 @@
+/* ============================================
+   project-card-v2.css - Project Card Pod v2
+   ============================================
+   
+   🔲 DESIGN 2: INLINE TOOLS & STACK
+   
+   Differences from v1:
+   - NO dropdown/expandable section
+   - Tools and Stack shown directly on card
+   - Wider card (380px vs 340px)
+   - Two-row bottom section
+   
+   ============================================ */
+
+
+/* ========================================
+   PROJECT CARD V2 - Main Container
+   ----------------------------------------
+   Wider than v1 to fit inline content
+   ======================================== */
+.project-card-v2 {
+    width: 380px;
+    min-width: 380px;
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base), z-index 0s;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+
+    /* Custom property for category-based glow */
+    --glow-color: var(--color-primary);
+}
+
+/* Background glow layer */
+.project-card-v2::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--glow-color);
+    filter: blur(20px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+.project-card-v2:hover::before {
+    opacity: 0.35;
+}
+
+.project-card-v2:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.15);
+    z-index: 100;
+}
+
+
+/* ========================================
+   CARD WRAPPER - Same as v1
+   ======================================== */
+.project-card-v2 .card-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+
+/* ========================================
+   CARD TOP - Badge Area
+   ======================================== */
+.project-card-v2 .card-top {
+    padding: 0.4rem;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 24px;
+}
+
+.project-card-v2 .card-badge {
+    color: rgba(255, 255, 255, 0.3);
+    transition: color var(--transition-base);
+}
+
+.project-card-v2:hover .card-badge {
+    color: var(--glow-color);
+}
+
+
+/* ========================================
+   CARD MAIN - Logo + Info
+   ======================================== */
+.project-card-v2 .card-main {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0 1rem 0.75rem 1rem;
+}
+
+.project-card-v2 .card-left {
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.project-card-v2 .card-logo-link {
+    text-decoration: none;
+    display: block;
+}
+
+.project-card-v2 .card-logo {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-sm);
+}
+
+.project-card-v2 .card-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.4rem;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.project-card-v2 .card-logo-link:hover .card-logo img {
+    transform: scale(1.05);
+}
+
+.project-card-v2 .card-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.project-card-v2 .card-title-link {
+    text-decoration: none;
+}
+
+.project-card-v2 .card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project-card-v2 .card-title-link:hover .card-title {
+    color: var(--glow-color);
+}
+
+.project-card-v2 .card-description {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    height: 78px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.project-card-v2 .card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-card-v2 .stat-views {
+    font-size: 0.8rem;
+    color: var(--color-text-tertiary);
+}
+
+.project-card-v2 .card-builder {
+    font-size: 0.85rem;
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+}
+
+.project-card-v2 a.card-builder:hover {
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================
+   CARD BOTTOM - Tools, Stack, Icons
+   ----------------------------------------
+   Two-row layout with inline tech
+   ======================================== */
+.project-card-v2 .card-bottom {
+    padding: 0.5rem 1rem 1rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.project-card-v2 .card-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 24px;
+}
+
+
+/* ========================================
+   INLINE TECH - Tools & Stack Pills
+   ======================================== */
+.project-card-v2 .card-inline-tech {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+}
+
+.project-card-v2 .inline-tech-label {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+.project-card-v2 .inline-tech-item {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   ICONS ROW - Same styling as v1
+   ======================================== */
+.project-card-v2 .card-icons {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.project-card-v2 .card-icon {
+    color: var(--color-text-tertiary);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.project-card-v2 .card-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.project-card-v2 .card-icon:hover {
+    color: var(--color-text-primary);
+}
+
+.project-card-v2 .card-icon.discord-mandatory {
+    color: rgba(139, 92, 246, 0.6);
+}
+
+.project-card-v2 .card-icon.discord-mandatory:hover {
+    color: var(--color-primary);
+}
+
+.project-card-v2 .card-icon.stat-save,
+.project-card-v2 .card-icon.stat-share {
+    padding: 0.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.25rem;
+}
+
+.project-card-v2 .card-icon.stat-save:hover,
+.project-card-v2 .card-icon.stat-share:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ========================================
+   RESPONSIVE - Mobile
+   ======================================== */
+@media (max-width: 768px) {
+    .project-card-v2 {
+        width: 320px;
+        min-width: 320px;
+    }
+}
+
+/* ========================================
+   PRICING BADGE - FREE / FREEMIUM / PAID
+   ======================================== */
+.project-card-v2 .pricing-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-primary-light);
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+/* ========================================
+   SAVED STATE - Filled bookmark
+   ======================================== */
+.project-card-v2 .card-icon.stat-save {
+    transition: all 0.15s ease;
+}
+
+.project-card-v2 .card-icon.stat-save:active {
+    transform: scale(0.85);
+}
+
+.project-card-v2 .card-icon.stat-save.saved {
+    color: #f472b6;
+    background: rgba(244, 114, 182, 0.15);
+}
+
+.project-card-v2 .card-icon.stat-save.saved:hover {
+    background: rgba(244, 114, 182, 0.25);
+}

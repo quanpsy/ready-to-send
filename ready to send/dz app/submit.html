@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================
+         Division Zero - Submit Page
+         ============================================
+         Forms for submitting projects and ideas.
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Submit your vibecoding project or idea to divisionzero. Share your creation with the community.">
+
+    <title>Submit - divisionzero</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/_config.css">
+    <link rel="stylesheet" href="css/_reset.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_utilities.css">
+    <link rel="stylesheet" href="css/layout/grid.css">
+    <link rel="stylesheet" href="css/layout/nav.css">
+    <link rel="stylesheet" href="css/layout/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/key-modal.css">
+    <link rel="stylesheet" href="css/pods/hero.css">
+    <link rel="stylesheet" href="css/pods/submit-project-form.css">
+    <link rel="stylesheet" href="css/pods/submit-idea-form.css">
+    <link rel="stylesheet" href="css/utils/mobile-spotlight.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <div id="nav-placeholder" data-page="submit"></div>
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="submit-hero">
+        <div class="container">
+            <div class="submit-header">
+                <h1 class="submit-title">
+                    Share Your <span class="gradient-text">Creation</span>
+                </h1>
+                <p class="submit-subtitle">
+                    Built something cool? Have an idea for the community?
+                    We'd love to hear from you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         FORM SECTION
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="form-container">
+
+                <!-- FORM TOGGLE -->
+                <div class="form-toggle">
+                    <button type="button" class="toggle-btn active" data-form="project">
+                        Submit Project
+                    </button>
+                    <button type="button" class="toggle-btn" data-form="idea">
+                        Submit Idea
+                    </button>
+                </div>
+
+
+                <!-- ========================================
+                     PROJECT FORM
+                     ======================================== -->
+                <form id="project-form" class="form-card glass">
+
+                    <div class="form-header">
+                        <h2>Submit Your Project</h2>
+                        <p>Share your vibecoding creation with the community</p>
+                    </div>
+
+                    <!-- BASIC INFO SECTION -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Basic Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project-name">Project Name *</label>
+                                <input type="text" id="project-name" name="name" required maxlength="20"
+                                    placeholder="e.g., TaskFlow Pro">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-url">Live URL *</label>
+                                <input type="url" id="project-url" name="url" required
+                                    placeholder="https://your-app.vercel.app">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-description">Description *</label>
+                            <textarea id="project-description" name="description" required maxlength="90"
+                                placeholder="What does your project do? What problem does it solve?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-logo">Logo (ImgBB HTML) *</label><textarea id="project-logo" name="logo" required rows="2" placeholder="Paste full HTML from ImgBB: <a href=...><img src=...></a>"></textarea><span class="form-hint">Upload to imgbb.com ? Copy "HTML full linked" ? Paste here</span>
+                        </div>
+                    </div>
+                    <!-- BUILDER INFO ROW -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="builder-name">Your Username / Handle *</label>
+                            <input type="text" id="builder-name" name="builderName" required placeholder="vibecoder1">
+                            <span class="form-hint">This will show as @username on your project card</span>
+                        </div>
+                    </div>
+                    <!-- LINKS SECTION -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Links (Optional)</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="project-github">GitHub Repository</label>
+                                <input type="url" id="project-github" name="github"
+                                    placeholder="https://github.com/you/repo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-discord">Your Discord Username</label>
+                                <input type="text" id="project-discord" name="discord"
+                                    placeholder="username#1234 or @username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-profile">Personal Profile URL</label>
+                            <input type="url" id="project-profile" name="profileUrl"
+                                placeholder="https://linkedin.com/in/yourname or https://yourwebsite.com">
+                            <span class="form-hint">LinkedIn, personal website, or portfolio link</span>
+                        </div>
+                    </div>
+
+                    <!-- TECH SECTION -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Technology</h3>
+
+                        <div class="form-group">
+                            <label>AI Tools Used</label>
+                            <div class="tile-grid" data-max-select="5" data-input-name="tools">
+                                <div class="tile" data-value="Claude">Claude</div>
+                                <div class="tile" data-value="ChatGPT">ChatGPT</div>
+                                <div class="tile" data-value="Gemini">Gemini</div>
+                                <div class="tile" data-value="Cursor">Cursor</div>
+                                <div class="tile" data-value="v0.dev">v0.dev</div>
+                                <div class="tile" data-value="Bolt.new">Bolt.new</div>
+                                <div class="tile" data-value="Lovable">Lovable</div>
+                                <div class="tile" data-value="Replit">Replit</div>
+                            </div>
+                            <input type="hidden" name="tools" value="">
+                            <span class="form-hint">Select up to 5</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tech Stack</label>
+                            <div class="tile-grid" data-max-select="5" data-input-name="tags">
+                                <div class="tile" data-value="React">React</div>
+                                <div class="tile" data-value="Next.js">Next.js</div>
+                                <div class="tile" data-value="Vue.js">Vue.js</div>
+                                <div class="tile" data-value="TypeScript">TypeScript</div>
+                                <div class="tile" data-value="JavaScript">JavaScript</div>
+                                <div class="tile" data-value="Node.js">Node.js</div>
+                                <div class="tile" data-value="Python">Python</div>
+                                <div class="tile" data-value="Supabase">Supabase</div>
+                                <div class="tile" data-value="Firebase">Firebase</div>
+                                <div class="tile" data-value="MongoDB">MongoDB</div>
+                                <div class="tile" data-value="PostgreSQL">PostgreSQL</div>
+                                <div class="tile" data-value="TailwindCSS">TailwindCSS</div>
+                            </div>
+                            <input type="hidden" name="tags" value="">
+                            <span class="form-hint">Select up to 5</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-category">Category *</label>
+                            <select id="project-category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="Productivity">Productivity</option>
+                                <option value="Developer Tools">Developer Tools</option>
+                                <option value="Design">Design</option>
+                                <option value="Games">Games</option>
+                                <option value="AI Agents">AI Agents</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- PRICING MODEL -->
+                    <div class="form-group">
+                        <label for="project-pricing">Pricing Model *</label>
+                        <select id="project-pricing" name="pricingModel" required>
+                            <option value="">Select pricing model</option>
+                            <option value="free">Completely Free (all tools have free tier)</option>
+                            <option value="partial">Partially Paid (mix of free and paid tools)</option>
+                            <option value="paid">Fully Paid (no free tier available)</option>
+                        </select>
+                        <span class="form-hint">This helps users know if they need paid subscriptions to recreate
+                            this</span>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <button type="submit" class="btn-submit">
+                        Submit Project
+                    </button>
+
+                </form>
+
+
+                <!-- ========================================
+                     IDEA FORM
+                     ======================================== -->
+                <form id="idea-form" class="form-card glass hidden">
+
+                    <div class="form-header">
+                        <h2>Submit an Idea</h2>
+                        <p>Got an idea for the community? Let us know!</p>
+                    </div>
+
+                    <div class="form-section">
+
+                        <!-- Contact Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="idea-name">Your Name *</label>
+                                <input type="text" id="idea-name" name="name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idea-email">Email *</label>
+                                <input type="email" id="idea-email" name="email" required
+                                    placeholder="john@example.com">
+                                <span class="form-hint">We'll use this to contact you</span>
+                            </div>
+                        </div>
+
+                        <!-- Idea Title -->
+                        <div class="form-group">
+                            <label for="idea-title">Idea Title *</label>
+                            <input type="text" id="idea-title" name="title" required
+                                placeholder="e.g., AI-powered task manager">
+                        </div>
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label for="idea-category">Category</label>
+                            <select id="idea-category" name="category">
+                                <option value="">Select category</option>
+                                <option value="app">App</option>
+                                <option value="game">Game</option>
+                                <option value="tool">Tool</option>
+                                <option value="website">Website</option>
+                                <option value="extension">Extension</option>
+                                <option value="bot">Bot</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Docs Link -->
+                        <div class="form-group">
+                            <label for="idea-docs">Idea Document Link *</label>
+                            <input type="url" id="idea-docs" name="docsLink" required
+                                placeholder="https://docs.google.com/document/d/...">
+                            <span class="form-hint">Paste your Google Docs, Notion, or any document link with your idea
+                                details</span>
+                        </div>
+
+                        <!-- Purpose -->
+                        <div class="form-group">
+                            <label for="idea-purpose">Purpose of Submission *</label>
+                            <select id="idea-purpose" name="purpose" required>
+                                <option value="">Select purpose</option>
+                                <option value="validation">Just for Validation / Feedback</option>
+                                <option value="client">I'm a Client (Looking to build this)</option>
+                            </select>
+                        </div>
+
+                        <!-- Budget (shown only when purpose is "client") -->
+                        <div class="form-group budget-group hidden">
+                            <label for="idea-budget">Budget (USD) *</label>
+                            <div class="budget-input-wrapper">
+                                <span class="budget-currency">$</span>
+                                <input type="number" id="idea-budget" name="budget" min="0"
+                                    placeholder="Enter your budget">
+                            </div>
+                            <span class="form-hint">Your approximate budget for this project</span>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Submit Idea
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/components/nav.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/discord-webhooks.js"></script>
+    <script src="js/pods/submit-project-form.js"></script>
+    <script src="js/pods/submit-idea-form.js"></script>
+    <script src="js/pages/submit.js"></script>
+
+    <!-- Mobile Spotlight -->
+    <script src="js/utils/mobile-spotlight.js"></script>
+
+</body>
+
+</html>
+

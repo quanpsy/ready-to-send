@@ -1,0 +1,396 @@
+/* ============================================
+   project-card.css - Project Card Pod
+   ============================================
+   
+   🔲 ISOLATED COMPONENT: PROJECT CARD
+   
+   LAYER SYSTEM:
+   - All cards sit in the normal flow (Layer 1)
+   - When hovered, card "rises" to Layer 2 (z-index: 1000)
+   - Layer 2 has no restrictions - card can expand freely
+   
+   CARD STRUCTURE:
+   ┌─────────────────────────────────────┐
+   │ [★ badge]                           │  ← card-top
+   │  ┌───┐  Title                       │
+   │  │ L │  Description...              │  ← card-main
+   │  │ O │  12.5k views  @builder       │
+   │  │ G │  [GH] [DC] [SV] [Share]      │
+   │  └───┘                              │
+   ├─────────────────────────────────────┤
+   │ Built with: Claude, Cursor          │  ← card-tech (OVERLAPS on hover)
+   │ Stack: React, Node.js               │
+   └─────────────────────────────────────┘
+   
+   ============================================ */
+
+
+/* ========================================
+   PROJECT CARD - Main Container
+   ----------------------------------------
+   The outer wrapper for each card
+   --glow-color: Set dynamically by category
+   BACKGROUND GLOW on hover (not border)
+   ======================================== */
+.project-card {
+    width: 340px;
+    min-width: 340px;
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base), z-index 0s;
+    position: relative;
+    /* Normal layer - z-index 1 */
+    z-index: 1;
+    /* Allow tech section to overflow/overlap */
+    overflow: visible;
+
+    /* Custom property for category-based glow */
+    --glow-color: var(--color-primary);
+}
+
+/* Background glow layer - behind the card */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--glow-color);
+    filter: blur(20px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    opacity: 0.35;
+}
+
+/* HOVER STATE - Card rises to Layer 2 */
+.project-card:hover {
+    transform: translateY(-8px);
+    /* LAYER 2: Very high z-index to escape all containers */
+    z-index: 1000;
+    /* Remove border glow, use subtle border instead */
+    border-color: rgba(255, 255, 255, 0.15);
+    /* Straight bottom corners to flow into tech section */
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+
+/* ========================================
+   CARD WRAPPER
+   ----------------------------------------
+   Inner container for layout
+   ======================================== */
+.card-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-secondary);
+    border-radius: inherit;
+    transition: border-radius var(--transition-base);
+}
+
+
+/* ========================================
+   CARD TOP - Badge Area
+   ----------------------------------------
+   Star/promoted badge in top-right
+   ======================================== */
+.card-top {
+    padding: 0.4rem;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 24px;
+}
+
+.card-badge {
+    color: rgba(255, 255, 255, 0.3);
+    transition: color var(--transition-base);
+}
+
+.project-card:hover .card-badge {
+    color: var(--glow-color);
+}
+
+
+/* ========================================
+   CARD MAIN - Content Area
+   ----------------------------------------
+   Logo + info side by side
+   ======================================== */
+.card-main {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+
+/* ========================================
+   CARD LEFT - Logo Column
+   ======================================== */
+.card-left {
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.card-logo-link {
+    text-decoration: none;
+    display: block;
+}
+
+.card-logo {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-sm);
+}
+
+.card-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.4rem;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.card-logo-link:hover .card-logo img {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   CARD INFO - Right Column
+   ----------------------------------------
+   Title, description, meta, icons
+   ======================================== */
+.card-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+/* ========================================
+   CARD TITLE
+   ======================================== */
+.card-title-link {
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-title-link:hover .card-title {
+    color: var(--glow-color);
+}
+
+
+/* ========================================
+   CARD DESCRIPTION
+   ----------------------------------------
+   3-line clamp
+   ======================================== */
+.card-description {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    height: 63px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+/* ========================================
+   CARD META - Views & Builder
+   ======================================== */
+.card-meta {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-builder {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+}
+
+a.card-builder:hover {
+    color: var(--color-text-secondary);
+}
+
+span.card-builder {
+    cursor: default;
+}
+
+.stat-views {
+    font-size: 0.7rem;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   CARD ICONS ROW
+   ----------------------------------------
+   GitHub, Discord, Save, Share buttons
+   FIXED POSITIONS - right aligned
+   ======================================== */
+.card-icons-row {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.card-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.card-icon {
+    color: var(--color-text-tertiary);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.card-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.card-icon:hover {
+    color: var(--color-text-primary);
+}
+
+/* GitHub icon - only shows if present */
+.card-icon.github-link {
+    color: var(--color-text-tertiary);
+}
+
+.card-icon.github-link:hover {
+    color: var(--color-text-primary);
+}
+
+/* Discord icon - always visible, special color */
+.card-icon.discord-mandatory {
+    color: rgba(139, 92, 246, 0.6);
+}
+
+.card-icon.discord-mandatory:hover {
+    color: var(--color-primary);
+}
+
+/* Save button - Instagram bookmark style */
+.card-icon.stat-save {
+    padding: 0.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.3rem;
+}
+
+.card-icon.stat-save:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+}
+
+/* Share button */
+.card-icon.stat-share {
+    padding: 0.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.3rem;
+}
+
+.card-icon.stat-share:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ========================================
+   CARD TECH - Expandable Section
+   ----------------------------------------
+   OVERLAPS content below (absolute positioning)
+   Does NOT push down other content
+   ======================================== */
+.card-tech {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+    padding: 0 1rem;
+    transition: max-height 0.4s cubic-bezier(0.4, 0.0, 0.2, 1),
+        padding 0.4s ease;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border: 1px solid transparent;
+    border-top: none;
+}
+
+.project-card:hover .card-tech {
+    max-height: 100px;
+    padding: 0.75rem 1rem;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-tech-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.card-tech-row:last-child {
+    margin-bottom: 0;
+}
+
+.tech-label {
+    font-size: 0.7rem;
+    color: var(--color-text-tertiary);
+    margin-right: 0.25rem;
+}
+
+.tech-item {
+    font-size: 0.65rem;
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+
+/* ========================================
+   RESPONSIVE - Mobile
+   ======================================== */
+@media (max-width: 768px) {
+    .project-card {
+        width: 280px;
+        min-width: 280px;
+    }
+}

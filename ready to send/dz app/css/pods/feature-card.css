@@ -1,0 +1,60 @@
+/* ============================================
+   feature-card.css - Feature Card Pod
+   ============================================
+   
+   🔲 ISOLATED COMPONENT: FEATURE/MODEL CARDS
+   
+   Additional styles for feature and model cards
+   beyond what's in components/cards.css.
+   
+   This file is for any special variations.
+   
+   ============================================ */
+
+
+/* ========================================
+   Feature card mouse glow effect
+   ----------------------------------------
+   Follows mouse cursor on hover
+   ======================================== */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(139, 92, 246, 0.1),
+            transparent 40%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+
+/* ========================================
+   Model card step indicator
+   ----------------------------------------
+   Additional styling for numbered steps
+   ======================================== */
+.model-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.model-card:hover::before {
+    opacity: 1;
+}

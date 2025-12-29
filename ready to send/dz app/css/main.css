@@ -1,0 +1,40 @@
+/* ============================================
+   main.css - Main CSS Entry Point
+   ============================================
+   
+   Imports all CSS files for bundling with esbuild.
+   Order: base → layout → components → pods → utils
+   
+   ============================================ */
+
+/* === BASE (Design tokens, resets) === */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+@import './base/animations.css';
+
+/* === LAYOUT (Structure) === */
+@import './layout/grid.css';
+@import './layout/nav.css';
+@import './layout/footer.css';
+
+/* === COMPONENTS (Reusable UI) === */
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/forms.css';
+@import './components/modal.css';
+@import './components/key-modal.css';
+@import './components/toast.css';
+
+/* === PODS (Feature sections) === */
+@import './pods/hero.css';
+@import './pods/home-sections.css';
+@import './pods/project-card-v2.css';
+@import './pods/carousel.css';
+@import './pods/tool-card.css';
+@import './pods/term-card.css';
+@import './pods/submit-project-form.css';
+@import './pods/submit-idea-form.css';
+
+/* === UTILS (Mobile, spotlight) === */
+@import './utils/mobile-spotlight.css';

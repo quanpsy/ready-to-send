@@ -1,0 +1,323 @@
+/* ============================================
+   _utilities.css - Helper Classes
+   ============================================
+   
+   🧰 UTILITY CLASSES FOR QUICK STYLING
+   
+   Add these classes to HTML elements for instant effects.
+   These are reusable across the entire site.
+   
+   SECTIONS:
+   1. Visibility (hidden, show)
+   2. Special effects (gradient text, glassmorphism)
+   3. Flexbox helpers
+   4. Spacing utilities
+   5. Animations
+   
+   ============================================ */
+
+
+/* ========================================
+   VISIBILITY
+   ----------------------------------------
+   Show/hide elements
+   ======================================== */
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+/* Screen reader only (hidden visually but accessible) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+/* ========================================
+   GRADIENT TEXT
+   ----------------------------------------
+   Apply purple→cyan gradient to text
+   Usage: <span class="gradient-text">Hello</span>
+   ======================================== */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* ========================================
+   GLASSMORPHISM
+   ----------------------------------------
+   Frosted glass effect for cards
+   Usage: <div class="glass">...</div>
+   ======================================== */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+
+/* ========================================
+   FLEX UTILITIES
+   ----------------------------------------
+   Quick flexbox layouts
+   ======================================== */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-xs {
+    gap: var(--spacing-xs);
+}
+
+.gap-sm {
+    gap: var(--spacing-sm);
+}
+
+.gap-md {
+    gap: var(--spacing-md);
+}
+
+.gap-lg {
+    gap: var(--spacing-lg);
+}
+
+
+/* ========================================
+   SPACING UTILITIES
+   ----------------------------------------
+   Margin & padding helpers
+   ======================================== */
+
+/* Margin bottom */
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Margin top */
+.mt-sm {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+    margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+/* Padding */
+.p-sm {
+    padding: var(--spacing-sm);
+}
+
+.p-md {
+    padding: var(--spacing-md);
+}
+
+.p-lg {
+    padding: var(--spacing-lg);
+}
+
+
+/* ========================================
+   ANIMATIONS - Keyframes
+   ----------------------------------------
+   Reusable animation definitions
+   ======================================== */
+
+/* Fade in and slide up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in with scale */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Simple fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Float up and down (for logos) */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Pulse glow effect */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Scroll indicator */
+@keyframes scrollDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+/* Shimmer effect (for skeleton loaders) */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+
+/* ========================================
+   ANIMATION CLASSES
+   ----------------------------------------
+   Apply animations to elements
+   ======================================== */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulse 8s ease-in-out infinite;
+}
+
+
+/* ========================================
+   TRANSITION HELPER
+   ----------------------------------------
+   Add smooth transitions to any element
+   ======================================== */
+.transition {
+    transition: all var(--transition-base);
+}
+
+.transition-fast {
+    transition: all var(--transition-fast);
+}
+
+
+/* ========================================
+   HOVER LIFT EFFECT
+   ----------------------------------------
+   Element lifts up on hover
+   ======================================== */
+.hover-lift {
+    transition: transform var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}

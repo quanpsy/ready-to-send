@@ -1,0 +1,230 @@
+/* ============================================
+   modal.css - Modal/Dialog Component
+   ============================================
+   
+   📋 OVERLAY POPUP COMPONENT
+   
+   Used for:
+   - Dictionary term details
+   - Project details (if needed)
+   - Confirmation dialogs
+   
+   ============================================ */
+
+
+/* ========================================
+   MODAL OVERLAY
+   ----------------------------------------
+   Full-screen backdrop
+   ======================================== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal-backdrop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+
+    /* Hidden by default */
+    visibility: hidden;
+    opacity: 0;
+    transition: all var(--transition-base);
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ========================================
+   MODAL BACKDROP
+   ----------------------------------------
+   Dark overlay behind modal
+   ======================================== */
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+
+/* ========================================
+   MODAL CONTENT
+   ----------------------------------------
+   The actual popup box
+   ======================================== */
+.modal-content {
+    position: relative;
+    z-index: var(--z-modal);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+
+    /* Entrance animation */
+    transform: translateY(20px) scale(0.95);
+    transition: transform var(--transition-base);
+}
+
+.modal.open .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ========================================
+   MODAL CLOSE BUTTON
+   ----------------------------------------
+   X button in top right
+   ======================================== */
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   MODAL HEADER
+   ======================================== */
+.modal-header {
+    margin-bottom: var(--spacing-lg);
+    padding-right: 50px;
+    /* Space for close button */
+}
+
+.modal-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.modal-subtitle {
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================
+   MODAL BODY
+   ======================================== */
+.modal-body {
+    margin-bottom: var(--spacing-lg);
+}
+
+
+/* ========================================
+   MODAL FOOTER
+   ----------------------------------------
+   Actions/buttons at bottom
+   ======================================== */
+.modal-footer {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+}
+
+
+/* ========================================
+   TERM MODAL (Dictionary specific)
+   ======================================== */
+.term-modal {
+    /* Same as base modal */
+}
+
+.term-modal .modal-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.term-modal .term-definition {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.term-modal .term-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.term-modal .term-section-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.term-modal .term-prompt {
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.term-modal .copy-prompt-btn {
+    margin-top: var(--spacing-sm);
+}
+
+
+/* ========================================
+   TOAST NOTIFICATION
+   ----------------------------------------
+   Small popup message
+   ======================================== */
+.toast {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    z-index: var(--z-toast);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all var(--transition-base);
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.toast-message {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+}

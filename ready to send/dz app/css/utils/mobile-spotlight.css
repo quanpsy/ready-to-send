@@ -1,0 +1,129 @@
+/* ============================================
+   mobile-spotlight.css - Mobile Hover Styles
+   ============================================
+   
+   📱 MOBILE SPOTLIGHT HOVER STATES
+   
+   These styles mirror the :hover states but are
+   triggered by the .spotlight-hover class instead.
+   
+   The mobile-spotlight.js adds this class when
+   elements pass through the viewport center.
+   
+   ONLY APPLIES ON MOBILE (max-width: 768px)
+   
+   ============================================ */
+
+
+@media (max-width: 768px) {
+
+    /* ========================================
+       PROJECT CARDS
+       ======================================== */
+    .project-card-v2.spotlight-hover {
+        transform: translateY(-4px);
+        border-color: var(--glow-color, rgba(139, 92, 246, 0.3));
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 20px var(--glow-color, rgba(139, 92, 246, 0.15)),
+            inset 0 0 20px var(--glow-color, rgba(139, 92, 246, 0.05));
+    }
+
+    .project-card-v2.spotlight-hover .card-image-container::before {
+        opacity: 0.8;
+    }
+
+    .project-card-v2.spotlight-hover .card-title {
+        color: var(--color-primary-light);
+    }
+
+
+    /* ========================================
+       TERM CARDS
+       ======================================== */
+    .term-card.spotlight-hover {
+        border-color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+    }
+
+
+    /* ========================================
+       TOOL CARDS
+       ======================================== */
+    .tool-card.spotlight-hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+    }
+
+
+    /* ========================================
+       TILES / CHIPS
+       ======================================== */
+    .tile.spotlight-hover {
+        border-color: var(--color-primary);
+        color: var(--color-text-primary);
+    }
+
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn-primary.spotlight-hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+    }
+
+    .btn-secondary.spotlight-hover {
+        background: rgba(139, 92, 246, 0.1);
+        border-color: var(--color-primary-light);
+        color: var(--color-primary-light);
+    }
+
+
+    /* ========================================
+       NAV JOIN BUTTON
+       ======================================== */
+    .nav-btn-join.spotlight-hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    }
+
+
+    /* ========================================
+       HERO EXTERNAL LINK
+       ======================================== */
+    .hero-external-link.spotlight-hover {
+        background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transform: translateX(4px);
+    }
+
+
+    /* ========================================
+       CAROUSEL ITEMS
+       ======================================== */
+    .carousel-item.spotlight-hover {
+        transform: scale(1.02);
+    }
+
+
+    /* ========================================
+       CARD ACTION BUTTONS (Icons)
+       ======================================== */
+    .project-card-v2.spotlight-hover .card-action-btn {
+        opacity: 1;
+    }
+
+
+    /* ========================================
+       TECH DROPDOWN
+       ======================================== */
+    .project-card-v2.spotlight-hover .tech-dropdown-trigger {
+        opacity: 1;
+    }
+
+}

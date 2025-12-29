@@ -1,0 +1,198 @@
+/* ============================================
+   grid.css - Layout System
+   ============================================
+   
+   📐 CONTAINERS & GRID STRUCTURES
+   
+   Controls the overall page layout:
+   - Container (centered content)
+   - Section padding
+   - Grid systems
+   
+   ============================================ */
+
+
+/* ========================================
+   CONTAINER
+   ----------------------------------------
+   Centers content with max-width
+   Usage: <div class="container">...</div>
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: 1600px;
+    /* 1200px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+/* Smaller container variant */
+.container-sm {
+    width: 100%;
+    max-width: var(--max-width-md);
+    /* 768px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+/* Larger container variant */
+.container-lg {
+    width: 100%;
+    max-width: 1800px;
+    /* 1400px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+
+/* ========================================
+   SECTIONS
+   ----------------------------------------
+   Standard section spacing
+   ======================================== */
+.section {
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+}
+
+/* Section with dark background */
+.section-dark {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* ========================================
+   SECTION HEADER
+   ----------------------------------------
+   Centered heading area for sections
+   ======================================== */
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+/* Section tag/label (small pill above title) */
+.section-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-light);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Section title */
+.section-title {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Section description */
+.section-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   FEATURE GRID
+   ----------------------------------------
+   3-column grid for feature cards
+   ======================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+
+/* ========================================
+   MODEL GRID
+   ----------------------------------------
+   Grid for model/step cards
+   ======================================== */
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+
+/* ========================================
+   STATS GRID
+   ----------------------------------------
+   Horizontal stats display
+   ======================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    text-align: center;
+}
+
+
+/* ========================================
+   TOOLS GRID
+   ----------------------------------------
+   Grid for tool cards
+   ======================================== */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+
+/* ========================================
+   TERMS GRID
+   ----------------------------------------
+   Grid for dictionary terms
+   ======================================== */
+.terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ----------------------------------------
+   Adjust layouts for smaller screens
+   ======================================== */
+@media (max-width: 968px) {
+
+    .features-grid,
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .tools-grid,
+    .terms-grid {
+        grid-template-columns: 1fr;
+    }
+}

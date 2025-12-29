@@ -1,0 +1,169 @@
+/* ============================================
+   submit-idea-form.css - Submit Idea Pod
+   ============================================
+   
+   🔲 ISOLATED COMPONENT: IDEA SUBMISSION FORM
+   
+   Styles specific to the idea submission form.
+   Uses base form styles from components/forms.css.
+   
+   FORM STRUCTURE:
+   ┌─────────────────────────────────────────┐
+   │          Submit an Idea                 │
+   │   Got an idea? Let us know!             │
+   ├─────────────────────────────────────────┤
+   │  ┌─────────────┐ ┌─────────────┐        │
+   │  │ Name *      │ │ Email *     │        │
+   │  └─────────────┘ └─────────────┘        │
+   │  ┌─────────────────────────────┐        │
+   │  │ Idea Title *                │        │
+   │  └─────────────────────────────┘        │
+   │  Category: [Dropdown]                   │
+   │  ┌─────────────────────────────┐        │
+   │  │ Document Link *             │        │
+   │  └─────────────────────────────┘        │
+   │  Purpose: [Dropdown]                    │
+   │  ┌─────────────────────────────┐        │
+   │  │ $ Budget (if client)        │        │
+   │  └─────────────────────────────┘        │
+   ├─────────────────────────────────────────┤
+   │          [Submit Idea]                  │
+   └─────────────────────────────────────────┘
+   
+   ============================================ */
+
+
+/* ========================================
+   IDEA FORM SPECIFIC STYLES
+   ======================================== */
+#idea-form {
+    /* Animation for form switch */
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+#idea-form.hidden {
+    display: none;
+}
+
+
+/* ========================================
+   IDEA FORM HEADER
+   ----------------------------------------
+   Different accent for idea form
+   ======================================== */
+#idea-form .form-header h2 {
+    /* Cyan accent instead of purple */
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* ========================================
+   IDEA FORM SECTIONS
+   ======================================== */
+#idea-form .form-section {
+    /* No internal sections, simpler form */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+/* ========================================
+   BUDGET INPUT WRAPPER
+   ----------------------------------------
+   Custom input with $ prefix
+   ======================================== */
+.budget-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.budget-currency {
+    position: absolute;
+    left: 1rem;
+    color: var(--color-text-tertiary);
+    font-size: 1rem;
+    font-weight: 500;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.budget-input-wrapper input[type="number"] {
+    width: 100%;
+    padding-left: 2rem;
+}
+
+/* Remove number input spinners */
+.budget-input-wrapper input[type="number"]::-webkit-outer-spin-button,
+.budget-input-wrapper input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.budget-input-wrapper input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* ========================================
+   BUDGET GROUP - Hidden by default
+   ======================================== */
+.budget-group {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.budget-group.hidden {
+    display: none;
+}
+
+.budget-group.visible {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   SUBMIT BUTTON - Idea
+   ----------------------------------------
+   Cyan accent to differentiate from project
+   ======================================== */
+#idea-form .btn-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    margin-top: var(--spacing-lg);
+}
+
+#idea-form .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+}
+
+#idea-form .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}

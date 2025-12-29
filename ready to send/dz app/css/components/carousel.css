@@ -1,0 +1,236 @@
+/* ============================================
+   carousel.css - Netflix-Style Carousel
+   ============================================
+   
+   🎠 SEAMLESS NETFLIX-STYLE SCROLL
+   
+   Features:
+   - Invisible clickable areas on edges
+   - Arrow appears subtly in faded zone
+   - No button appearance - feels like empty space
+   - Left fade only shows after scrolling
+   
+   ============================================ */
+
+
+/* ========================================
+   CAROUSEL WRAPPER
+   ----------------------------------------
+   Contains carousel and invisible nav zones
+   ======================================== */
+.carousel-wrapper {
+    position: relative;
+    overflow: visible;
+}
+
+
+/* ========================================
+   PROJECT CAROUSEL
+   ----------------------------------------
+   Main horizontal scroll container
+   ======================================== */
+.project-carousel {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.project-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.project-carousel:active {
+    cursor: grabbing;
+}
+
+
+/* ========================================
+   NETFLIX-STYLE NAV ZONES
+   ----------------------------------------
+   Invisible clickable areas that blend
+   with the fade gradient
+   ======================================== */
+.carousel-nav-zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    /* No visual appearance - blends with fade */
+}
+
+/* Left zone - includes the left fade gradient */
+.carousel-nav-zone.prev {
+    left: 0;
+    background: linear-gradient(to right,
+            var(--color-bg-dark) 0%,
+            var(--color-bg-dark) 20%,
+            transparent 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+/* Show left zone when scrolled */
+.carousel-wrapper.scrolled .carousel-nav-zone.prev {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Right zone - includes the right fade gradient */
+.carousel-nav-zone.next {
+    right: 0;
+    background: linear-gradient(to left,
+            var(--color-bg-dark) 0%,
+            var(--color-bg-dark) 20%,
+            transparent 100%);
+    transition: opacity 0.25s ease;
+}
+
+/* Hide right zone when at end */
+.carousel-nav-zone.next.at-end {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* The subtle arrow icon - only visible on hover */
+.carousel-nav-zone svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-text-primary);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+/* Show arrow on hover - subtle appearance */
+.carousel-nav-zone:hover svg {
+    opacity: 0.8;
+}
+
+/* Slight scale on click feel */
+.carousel-nav-zone:active svg {
+    opacity: 1;
+    transform: scale(0.9);
+}
+
+
+/* ========================================
+   CATEGORY SECTION
+   ======================================== */
+.project-category {
+    margin-bottom: var(--spacing-md);
+    overflow: visible;
+    position: relative;
+}
+
+
+/* ========================================
+   CATEGORY HEADER
+   ======================================== */
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+}
+
+.category-description {
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+/* Hide legacy nav buttons */
+.category-nav {
+    display: none;
+}
+
+
+/* ========================================
+   LEGACY NAV BUTTONS (fallback)
+   ======================================== */
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.nav-btn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: var(--color-primary);
+    color: var(--color-text-primary);
+}
+
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ========================================
+   NO RESULTS STATE
+   ======================================== */
+.no-results {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    color: var(--color-text-secondary);
+}
+
+.no-results svg {
+    margin: 0 auto var(--spacing-md);
+    opacity: 0.5;
+}
+
+.no-results h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .carousel-nav-zone {
+        width: 50px;
+    }
+
+    .carousel-nav-zone svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* On touch devices, always show arrows slightly */
+@media (hover: none) {
+    .carousel-nav-zone svg {
+        opacity: 0.4;
+    }
+
+    .carousel-nav-zone:active svg {
+        opacity: 1;
+    }
+}

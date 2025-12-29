@@ -1,0 +1,213 @@
+/* ============================================
+   _typography.css - Fonts & Text Styles
+   ============================================
+   
+   ✏️ ALL TEXT & FONT RELATED STYLES
+   
+   Controls how text looks across the site:
+   - Base font settings
+   - Headings (h1-h6)
+   - Paragraph styles
+   - Text utilities
+   
+   ============================================ */
+
+
+/* ========================================
+   Base Typography
+   ----------------------------------------
+   Applied to <body>, inherited everywhere
+   ======================================== */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-dark);
+}
+
+
+/* ========================================
+   Headings (h1 - h6)
+   ----------------------------------------
+   Uses display font (Space Grotesk)
+   ======================================== */
+
+/* Hero heading - biggest */
+h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    /* Responsive: 40px to 80px */
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* Section heading */
+h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    /* Responsive: 32px to 56px */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Card/Feature heading */
+h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    /* 24px */
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Sub-heading */
+h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    /* 20px */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Small heading */
+h5 {
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    /* 18px */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Tiny heading */
+h6 {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    /* 16px */
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   Paragraphs & Body Text
+   ======================================== */
+p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+}
+
+/* Lead paragraph (larger, used in hero subtitles) */
+.text-lead {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+/* Small text */
+.text-small {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+/* Muted text */
+.text-muted {
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================
+   Links
+   ----------------------------------------
+   Default link styling
+   ======================================== */
+a {
+    color: var(--color-primary-light);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+
+/* ========================================
+   Text Weights
+   ----------------------------------------
+   Utility classes for font-weight
+   ======================================== */
+.font-light {
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+
+/* ========================================
+   Text Transform
+   ----------------------------------------
+   Uppercase, capitalize, etc.
+   ======================================== */
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+
+/* ========================================
+   Text Alignment
+   ======================================== */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/* ========================================
+   Text Truncation
+   ----------------------------------------
+   Cut off text with ellipsis (...)
+   ======================================== */
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Multi-line clamp (2 lines default) */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

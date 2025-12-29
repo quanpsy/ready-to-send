@@ -1,0 +1,284 @@
+/* ============================================
+   project-card-v3.css - Project Card Pod v3
+   ============================================
+   
+   🔲 DESIGN 3: TOOL-CARD STYLING
+   
+   Same layout as v2 but with:
+   - Tool-card font sizes (larger, more readable)
+   - No "Built with:" / "Stack:" labels
+   - Just pill tags for tools and stack
+   - Cleaner, more professional look
+   
+   ============================================ */
+
+
+/* ========================================
+   PROJECT CARD V3 - Main Container
+   ----------------------------------------
+   Larger than v2 for better readability
+   ======================================== */
+.project-card-v3 {
+    width: 400px;
+    min-width: 400px;
+    padding: var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base), z-index 0s;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+
+    /* Custom property for category-based glow */
+    --glow-color: var(--color-primary);
+}
+
+/* Background glow layer */
+.project-card-v3::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--glow-color);
+    filter: blur(20px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+.project-card-v3:hover::before {
+    opacity: 0.35;
+}
+
+.project-card-v3:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    z-index: 100;
+}
+
+
+/* ========================================
+   CARD WRAPPER
+   ======================================== */
+.project-card-v3 .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+/* ========================================
+   CARD TOP - Badge Area
+   ======================================== */
+.project-card-v3 .card-top {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 20px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-card-v3 .card-badge {
+    color: rgba(255, 255, 255, 0.3);
+    transition: color var(--transition-base);
+}
+
+.project-card-v3:hover .card-badge {
+    color: var(--glow-color);
+}
+
+
+/* ========================================
+   CARD HEADER - Logo + Title + Views
+   ----------------------------------------
+   Tool-card style header layout
+   ======================================== */
+.project-card-v3 .card-header {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-card-v3 .card-logo-link {
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.project-card-v3 .card-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    transition: transform var(--transition-base);
+}
+
+.project-card-v3 .card-logo-link:hover .card-logo {
+    transform: scale(1.05);
+}
+
+.project-card-v3 .card-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.project-card-v3 .card-title-link {
+    text-decoration: none;
+}
+
+.project-card-v3 .card-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    transition: color var(--transition-base);
+}
+
+.project-card-v3 .card-title-link:hover .card-title {
+    color: var(--glow-color);
+}
+
+.project-card-v3 .card-views {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+}
+
+
+/* ========================================
+   CARD DESCRIPTION
+   ----------------------------------------
+   Tool-card style description
+   ======================================== */
+.project-card-v3 .card-description {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+    font-size: var(--text-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   TECH PILLS - Tools & Stack
+   ----------------------------------------
+   No labels, just clean pills
+   ======================================== */
+.project-card-v3 .card-tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-card-v3 .tech-pill {
+    font-size: var(--text-xs);
+    padding: 0.25rem 0.5rem;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   CARD FOOTER - Builder + Icons
+   ----------------------------------------
+   Tool-card style footer
+   ======================================== */
+.project-card-v3 .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card-v3 .card-builder {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.project-card-v3 a.card-builder:hover {
+    color: var(--color-primary-light);
+}
+
+
+/* ========================================
+   ICONS ROW
+   ======================================== */
+.project-card-v3 .card-icons {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+.project-card-v3 .card-icon {
+    color: var(--color-text-tertiary);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.project-card-v3 .card-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.project-card-v3 .card-icon:hover {
+    color: var(--color-text-primary);
+}
+
+.project-card-v3 .card-icon.discord-mandatory {
+    color: rgba(139, 92, 246, 0.6);
+}
+
+.project-card-v3 .card-icon.discord-mandatory:hover {
+    color: var(--color-primary);
+}
+
+.project-card-v3 .card-icon.stat-save,
+.project-card-v3 .card-icon.stat-share {
+    padding: 0.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.3rem;
+}
+
+.project-card-v3 .card-icon.stat-save:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+}
+
+.project-card-v3 .card-icon.stat-share:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ========================================
+   RESPONSIVE - Mobile
+   ======================================== */
+@media (max-width: 768px) {
+    .project-card-v3 {
+        width: 340px;
+        min-width: 340px;
+    }
+}

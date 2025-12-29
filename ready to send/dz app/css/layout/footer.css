@@ -1,0 +1,134 @@
+/* ============================================
+   footer.css - Footer Component
+   ============================================
+   
+   🦶 SITE FOOTER
+   
+   Appears at bottom of all pages. Contains:
+   - Logo
+   - Tagline
+   - Social links
+   - Copyright
+   
+   TO EDIT FOOTER:
+   - Change logo/links: Edit HTML in footer.js
+   - Change styling: Edit this file
+   
+   ============================================ */
+
+
+/* ========================================
+   FOOTER - Main Container
+   ======================================== */
+.footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+
+/* ========================================
+   FOOTER - Content Area
+   ----------------------------------------
+   Logo, tagline, and social links
+   ======================================== */
+.footer-content {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+
+/* ========================================
+   FOOTER - Logo
+   ======================================== */
+.logo-footer {
+    height: 50px;
+    margin: 0 auto var(--spacing-sm);
+    opacity: 0.8;
+}
+
+
+/* ========================================
+   FOOTER - Tagline Text
+   ======================================== */
+.footer-text {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+}
+
+
+/* ========================================
+   FOOTER - Social Links
+   ----------------------------------------
+   Icons for Discord, X, Reddit, etc.
+   ======================================== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-base);
+}
+
+.social-link:hover {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ========================================
+   FOOTER - Bottom Section
+   ----------------------------------------
+   Copyright line
+   ======================================== */
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+}
+
+
+/* ========================================
+   FOOTER - Total Views Counter
+   ----------------------------------------
+   Optional: Show total views across projects
+   ======================================== */
+.total-views {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+}
+
+.views-count {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-primary-light);
+}
+
+.views-label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-xs);
+}

@@ -1,0 +1,256 @@
+/* ============================================
+   term-card.css - Dictionary Term Card Pod
+   ============================================
+   
+   🔲 ISOLATED COMPONENT: TERM CARD
+   
+   Used on Dictionary page for vibecoding terms.
+   
+   CARD STRUCTURE:
+   ┌─────────────────────────────────────┐
+   │  🍔            Hamburger Menu       │
+   │                                     │
+   │  UI/UX                              │  ← term-category
+   │                                     │
+   │  Brief definition text about        │  ← term-preview
+   │  what this term means...            │
+   │                                     │
+   │           [Learn More →]            │  ← term-action
+   └─────────────────────────────────────┘
+   
+   ============================================ */
+
+
+/* ========================================
+   TERM CARD - Main Container
+   ======================================== */
+.term-card {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.term-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+}
+
+
+/* ========================================
+   TERM ICON
+   ----------------------------------------
+   Emoji or icon representing the term
+   ======================================== */
+.term-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+
+/* ========================================
+   TERM NAME
+   ======================================== */
+.term-name {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+
+/* ========================================
+   TERM CATEGORY
+   ----------------------------------------
+   Small badge showing category
+   ======================================== */
+.term-category {
+    display: inline-block;
+    font-size: var(--text-xs);
+    padding: 0.2rem 0.5rem;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-sm);
+}
+
+
+/* ========================================
+   TERM PREVIEW
+   ----------------------------------------
+   Short preview of definition
+   ======================================== */
+.term-preview {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   TERM ACTION
+   ----------------------------------------
+   "Learn More" link
+   ======================================== */
+.term-action {
+    margin-top: var(--spacing-md);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.term-card:hover .term-action {
+    opacity: 1;
+}
+
+
+/* ========================================
+   TERM PILL (for scrolling rows)
+   ----------------------------------------
+   Small pill showing term name on home page
+   ======================================== */
+.term-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.term-pill:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--color-primary);
+}
+
+.term-pill-icon {
+    font-size: 1.2rem;
+}
+
+.term-pill-name {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+
+/* ========================================
+   DICTIONARY CONTROLS
+   ----------------------------------------
+   Search bar + filter pills container
+   ======================================== */
+.dictionary-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-base);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.search-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+/* ========================================
+   RATING BARS - "Broken 7" Easter Egg
+   ----------------------------------------
+   10 dots showing difficulty/capability
+   7th dot is always "broken" (flickers)
+   ======================================== */
+.term-ratings {
+    margin-bottom: var(--spacing-sm);
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.rating-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.35);
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.rating-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.rating-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Filled dot - glowing */
+.rating-dot.filled {
+    background: var(--color-primary);
+    box-shadow: 0 0 6px var(--color-primary);
+}
+
+/* Empty dot - dim */
+.rating-dot:not(.filled):not(.broken) {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Broken 7th dot - cracked glass effect */
+.rating-dot.broken {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    position: relative;
+    animation: flicker7 3s ease-in-out infinite;
+}
+
+/* Crack line through the broken dot */
+.rating-dot.broken::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: 1px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(20deg);
+}
+
+/* Random flicker animation - max 50% brightness */
+@keyframes flicker7 {
+    0%, 100% { opacity: 0.5; box-shadow: none; }
+    15% { opacity: 0.2; }
+    17% { opacity: 0.5; box-shadow: 0 0 2px var(--color-primary); }
+    35% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+    65% { opacity: 0.15; }
+    67% { opacity: 0.4; }
+    85% { opacity: 0.5; box-shadow: 0 0 3px var(--color-primary); }
+}

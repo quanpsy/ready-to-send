@@ -1,0 +1,154 @@
+/* ============================================
+   _reset.css - Browser Reset & Defaults
+   ============================================
+   
+   🔄 NORMALIZES BROWSER DEFAULTS
+   
+   Removes inconsistent browser styling so we start from
+   a clean slate. Every browser will look the same.
+   
+   WHAT THIS DOES:
+   - Removes default margins/paddings
+   - Sets box-sizing to border-box (easier sizing)
+   - Removes list styling
+   - Improves image/media defaults
+   
+   ============================================ */
+
+
+/* ========================================
+   Box Sizing Reset
+   ----------------------------------------
+   Makes padding/border included in width
+   Example: width: 100px stays 100px even with padding
+   ======================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   HTML & Body Defaults
+   ----------------------------------------
+   Sets up smooth scrolling and base styles
+   ======================================== */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* Prevents iOS text zoom */
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    /* Smoother fonts on Mac */
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Prevents horizontal scroll */
+}
+
+
+/* ========================================
+   Media Elements
+   ----------------------------------------
+   Images, videos should be responsive by default
+   ======================================== */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ========================================
+   Form Elements
+   ----------------------------------------
+   Inherit fonts (browsers give different defaults)
+   ======================================== */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+
+/* ========================================
+   Remove List Styling
+   ----------------------------------------
+   Lists without bullets by default
+   ======================================== */
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* ========================================
+   Links
+   ----------------------------------------
+   Remove underline, inherit color
+   ======================================== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   Buttons
+   ----------------------------------------
+   Remove browser button styling
+   ======================================== */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   Tables
+   ----------------------------------------
+   Consistent table layout
+   ======================================== */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ========================================
+   Focus Outline
+   ----------------------------------------
+   Better focus styles for accessibility
+   ======================================== */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/* ========================================
+   Selection (Highlighted Text)
+   ----------------------------------------
+   Custom highlight color
+   ======================================== */
+::selection {
+    background: var(--color-primary);
+    color: var(--color-text-primary);
+}

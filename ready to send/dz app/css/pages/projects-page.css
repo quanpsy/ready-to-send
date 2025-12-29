@@ -1,0 +1,57 @@
+/* ============================================
+   projects-page.css - Projects Page Overrides
+   ============================================
+   
+   🎯 FIX: Cards clipping on hover
+   
+   Similar to the vocabulary tooltip fix on home page,
+   this ensures project cards can overflow freely.
+   
+   ============================================ */
+
+
+/* ========================================
+   PROJECTS CONTAINER
+   ----------------------------------------
+   Allow cards to overflow beyond bounds
+   Similar to vocabulary tooltip fix
+   ======================================== */
+#projects-container {
+    /* Allow overflow for card expansion */
+    overflow: visible;
+    position: relative;
+}
+
+/* Section containing the projects */
+.section:has(#projects-container) {
+    /* Allow children to overflow (project cards) */
+    overflow: visible;
+}
+
+
+/* ========================================
+   PROJECTS HERO
+   ----------------------------------------
+   Should not clip anything below
+   ======================================== */
+.projects-hero {
+    overflow: visible;
+}
+
+
+/* ========================================
+   ALL SECTIONS ON PROJECTS PAGE
+   ----------------------------------------
+   Ensure no section clips the cards
+   ======================================== */
+body:has(#projects-container) .section {
+    overflow: visible;
+}
+
+body:has(#projects-container) .container,
+body:has(#projects-container) .container-lg {
+    overflow: visible;
+    /* Reduced side padding for more card space */
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}

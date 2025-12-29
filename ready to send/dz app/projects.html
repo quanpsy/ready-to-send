@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================
+         Division Zero - Projects Page
+         ============================================
+         Showcases all vibecoding projects.
+         
+         SECTIONS:
+         1. Hero - Page title
+         2. Search/Filters - Find projects
+         3. Categories - Carousels by category
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse vibecoding projects built with AI. Discover apps, tools, and games created by our community.">
+
+    <title>Projects - divisionzero</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/_config.css">
+    <link rel="stylesheet" href="css/_reset.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_utilities.css">
+    <link rel="stylesheet" href="css/layout/grid.css">
+    <link rel="stylesheet" href="css/layout/nav.css">
+    <link rel="stylesheet" href="css/layout/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/tags.css">
+    <link rel="stylesheet" href="css/components/carousel.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/pods/hero.css">
+    <link rel="stylesheet" href="css/pods/term-card.css">
+    <link rel="stylesheet" href="css/pods/project-card.css">
+    <link rel="stylesheet" href="css/pods/project-card-v2.css"
+    <link rel="stylesheet" href="css/components/report-modal.css">
+    <link rel="stylesheet" href="css/components/report-tooltip.css">
+    <link rel="stylesheet" href="css/pods/project-card-v3.css">
+    <link rel="stylesheet" href="css/pages/projects-page.css">
+    <link rel="stylesheet" href="css/utils/mobile-spotlight.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <div id="nav-placeholder" data-page="projects"></div>
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="projects-header">
+                <h1 class="projects-title">
+                    <span class="gradient-text">Vibecoding</span> Projects
+                </h1>
+                <p class="projects-subtitle">
+                    Discover apps built by vibecoders using AI. Get inspired, learn from others,
+                    and share your own creations.
+                </p>
+                <a href="#" id="full-projects-link" class="hero-external-link">
+                    For more projects →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         SEARCH & FILTERS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Search input -->
+            <div class="dictionary-controls">
+                <input type="text" id="project-search" class="search-input"
+                    placeholder="Search projects by name, description, or tech...">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         PROJECTS CONTAINER
+         Categories and carousels rendered here by JS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container-lg" id="projects-container">
+            <!-- Carousels inserted by projects.js -->
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/components/nav.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/discord-webhooks.js"></script>
+    <script src="js/pods/project-card-v2.js"></script>
+    <script src="js/pods/carousel.js"></script>
+    <script src="js/pages/projects.js"></script>
+
+    <!-- Set external link from config -->
+    <script>
+        document.getElementById('full-projects-link').href = CONFIG.FULL_PROJECTS_DATABASE_URL;
+    </script>
+
+    <!-- Mobile Spotlight -->
+    <script src="js/utils/mobile-spotlight.js"></script>
+
+</body>
+
+</html>

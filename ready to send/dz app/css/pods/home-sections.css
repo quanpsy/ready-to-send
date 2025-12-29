@@ -1,0 +1,320 @@
+/* ============================================
+   home-sections.css - Home Page Special Sections
+   ============================================
+   
+   🏠 ISOLATED STYLES FOR HOME PAGE
+   
+   Contains:
+   1. Vocabulary Term Rows (3 scrolling rows with tooltips)
+   2. Stack/Tool Logo Loop (infinite scroll icons)
+   
+   These are SEPARATE from the project carousel.
+   
+   ============================================ */
+
+
+/* ========================================
+   VOCABULARY TERM ROWS
+   ----------------------------------------
+   3 rows of scrolling terms with tooltips
+   ======================================== */
+.term-scroll-section {
+    padding: var(--spacing-2xl) 0;
+    /* Allow tooltips to overflow above section */
+    overflow: visible;
+    position: relative;
+    z-index: 10;
+}
+
+.term-scroll-section .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.term-scroll-container {
+    /* Allow horizontal scroll animation but let tooltips overflow vertically */
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+    /* Add padding top so tooltips have room */
+    padding-top: 140px;
+    margin-top: -140px;
+}
+
+.term-scroll-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    animation: term-scroll-left 50s linear infinite;
+    width: max-content;
+    /* Allow tooltips to overflow */
+    overflow: visible;
+    /* Smooth animation */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Second row - slightly different speed */
+.term-scroll-row:nth-child(2) {
+    animation-duration: 45s;
+}
+
+/* Third row - reverse direction */
+.term-scroll-row.reverse {
+    animation: term-scroll-right 42s linear infinite;
+}
+
+/* Pause ALL rows when any row is hovered */
+.term-scroll-container:hover .term-scroll-row {
+    animation-play-state: paused;
+}
+
+@keyframes term-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
+@keyframes term-scroll-right {
+    0% {
+        transform: translateX(-33.33%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* ========================================
+   TERM PILL
+   ----------------------------------------
+   Individual term with icon and tooltip
+   ======================================== */
+.term-scroll-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    /* Ensure pill can show tooltip above */
+    overflow: visible;
+}
+
+.term-scroll-pill:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+    z-index: 100;
+}
+
+.term-scroll-pill .pill-icon {
+    font-size: 1.1rem;
+}
+
+.term-scroll-pill .pill-name {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   TERM TOOLTIP
+   ----------------------------------------
+   Shows definition on hover
+   Text wraps to multiple lines
+   ======================================== */
+.term-tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-33.33%);
+    width: 300px;
+    min-height: 100px;
+    height: auto;
+    padding: 1rem 1.25rem;
+    background: rgba(20, 20, 30, 0.98);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+
+    /* Hidden by default */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+/* Arrow pointing down */
+.term-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-33.33%);
+    border: 8px solid transparent;
+    border-top-color: rgba(20, 20, 30, 0.98);
+}
+
+/* Show tooltip on hover */
+.term-scroll-pill:hover .term-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.term-tooltip-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-light);
+    /* Allow title to wrap to 2 lines */
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.term-tooltip-definition {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    /* FORCE TEXT TO WRAP TO MULTIPLE LINES */
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+
+/* ========================================
+   STACK/TOOL LOGO LOOP
+   ----------------------------------------
+   Infinite scrolling icons (decorative only)
+   ======================================== */
+.logo-scroll-section {
+    padding: var(--spacing-xl) 0 var(--spacing-2xl);
+    overflow: hidden;
+}
+
+.logo-scroll-section .section-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.logo-scroll-wrapper {
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Fade edges for seamless look */
+.logo-scroll-wrapper::before,
+.logo-scroll-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-scroll-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-dark) 0%, var(--color-bg-dark) 30%, transparent 100%);
+}
+
+.logo-scroll-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-dark) 0%, var(--color-bg-dark) 30%, transparent 100%);
+}
+
+.logo-scroll-track {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    animation: logo-scroll 30s linear infinite;
+    width: fit-content;
+    will-change: transform;
+}
+
+@keyframes logo-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
+/* Individual logo icons - static, unclickable */
+.logo-scroll-track img {
+    height: 36px;
+    width: auto;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Invert dark-only logos (Vercel, GitHub, Next.js, Anthropic, Cursor) */
+.logo-scroll-track img[alt='Vercel'],
+.logo-scroll-track img[alt='GitHub'],
+/* Next.js removed - already white */ .logo-scroll-track img[alt='REMOVED'] {
+    filter: brightness(0) invert(1);
+}
+
+/* Full color on hover */
+.logo-scroll-wrapper:hover .logo-scroll-track img {
+    opacity: 1;
+}
+
+/* Keep inverted icons inverted on hover */
+.logo-scroll-wrapper:hover .logo-scroll-track img[alt='Vercel'],
+.logo-scroll-wrapper:hover .logo-scroll-track img[alt='GitHub'],
+.logo-scroll-wrapper:hover /* Next.js removed - already white */ .logo-scroll-track img[alt='REMOVED'] {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ========================================
+   RESPONSIVE - Mobile
+   ======================================== */
+@media (max-width: 768px) {
+    .term-scroll-container {
+        padding-top: 100px;
+        margin-top: -100px;
+    }
+
+    .term-scroll-pill {
+        padding: 0.5rem 1rem;
+    }
+
+    .term-scroll-pill .pill-name {
+        font-size: 0.8rem;
+    }
+
+    .term-tooltip {
+        width: 240px;
+        padding: 0.75rem 1rem;
+    }
+
+    .logo-scroll-track img {
+        height: 28px;
+    }
+
+    .logo-scroll-track {
+        gap: 2rem;
+    }
+}

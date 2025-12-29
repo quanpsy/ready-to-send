@@ -1,0 +1,263 @@
+/* ============================================
+   tool-card.css - Tool Card Pod
+   ============================================
+   
+   🔲 ISOLATED COMPONENT: TOOL CARD
+   
+   Used on Tools page to show AI tools, frameworks, etc.
+   
+   CARD STRUCTURE:
+   ┌─────────────────────────────────────┐
+   │  ┌───┐  Tool Name                   │
+   │  │ L │  Beginner-friendly           │  ← tool-header
+   │  │ O │                              │
+   │  └───┘                              │
+   │                                     │
+   │  Description text about the tool    │  ← tool-description
+   │  and what it does...                │
+   │                                     │
+   │  [Feature 1] [Feature 2] [Feature 3]│  ← tool-features
+   │                                     │
+   │  Free tier available    [Visit →]   │  ← tool-footer
+   └─────────────────────────────────────┘
+   
+   ============================================ */
+
+
+/* ========================================
+   TOOL CARD - Main Container
+   ======================================== */
+.tool-card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-base);
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ========================================
+   TOOL HEADER
+   ----------------------------------------
+   Logo + Name + Skill level
+   ======================================== */
+.tool-header {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tool-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+}
+
+.tool-name {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.tool-skill {
+    display: inline-block;
+    font-size: var(--text-xs);
+    padding: 0.25rem 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-success);
+    border-radius: var(--radius-full);
+}
+
+
+/* ========================================
+   TOOL DESCRIPTION
+   ======================================== */
+.tool-description {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    flex: 1;
+}
+
+
+/* ========================================
+   TOOL FEATURES
+   ----------------------------------------
+   Feature badges/tags
+   ======================================== */
+.tool-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+
+/* ========================================
+   TOOL FOOTER
+   ----------------------------------------
+   Pricing info + Link
+   ======================================== */
+.tool-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tool-pricing {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+.tool-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-light);
+    transition: color var(--transition-base);
+}
+
+.tool-link:hover {
+    color: var(--color-primary);
+}
+
+
+/* ========================================
+   TOOLS CATEGORY
+   ----------------------------------------
+   Section containing category title + grid
+   ======================================== */
+.tools-category {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.tools-category .category-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.tools-category .category-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.tools-category .category-description {
+    color: var(--color-text-secondary);
+}
+
+/* ========================================
+   RATING BARS - "Broken 7" Easter Egg
+   ----------------------------------------
+   10 dots showing difficulty/capability
+   7th dot is always "broken" (flickers)
+   ======================================== */
+.tool-ratings {
+    margin-bottom: var(--spacing-sm);
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.rating-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.35);
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.rating-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.rating-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Filled dot - glowing */
+.rating-dot.filled {
+    background: var(--color-primary);
+    box-shadow: 0 0 6px var(--color-primary);
+}
+
+/* Empty dot - dim */
+.rating-dot.empty {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Broken 7th dot - cracked glass effect */
+.rating-dot.broken {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    position: relative;
+    animation: flicker7 3s ease-in-out infinite;
+}
+
+/* Crack line through the broken dot */
+.rating-dot.broken::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: 1px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(20deg);
+}
+
+/* Random flicker animation - max 50% brightness */
+@keyframes flicker7 {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        box-shadow: none;
+    }
+
+    15% {
+        opacity: 0.2;
+    }
+
+    17% {
+        opacity: 0.5;
+        box-shadow: 0 0 2px var(--color-primary);
+    }
+
+    35% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    65% {
+        opacity: 0.15;
+    }
+
+    67% {
+        opacity: 0.4;
+    }
+
+    85% {
+        opacity: 0.5;
+        box-shadow: 0 0 3px var(--color-primary);
+    }
+}

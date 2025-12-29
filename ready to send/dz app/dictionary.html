@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================
+         Division Zero - Dictionary Page
+         ============================================
+         Vibecoder terminology with AI prompts.
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The vibecoder's dictionary. Learn coding terms with definitions, examples, and AI prompts to implement them.">
+
+    <title>Dictionary - divisionzero</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/_config.css">
+    <link rel="stylesheet" href="css/_reset.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_utilities.css">
+    <link rel="stylesheet" href="css/layout/grid.css">
+    <link rel="stylesheet" href="css/layout/nav.css">
+    <link rel="stylesheet" href="css/layout/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/pods/hero.css">
+    <link rel="stylesheet" href="css/pods/term-card.css">
+    <link rel="stylesheet" href="css/utils/mobile-spotlight.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <div id="nav-placeholder" data-page="dictionary"></div>
+
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="dictionary-hero">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">
+                    <span class="gradient-text">Vibecoder's</span> Dictionary
+                </h1>
+                <p class="section-description">
+                    Learn the language of modern web development.
+                    Every term comes with an AI prompt to help you implement it.
+                </p>
+                <a href="#" id="full-library-link" class="hero-external-link">
+                    Our library →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         SEARCH
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="dictionary-controls">
+                <input type="text" id="term-search" class="search-input" placeholder="Search terms...">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         TERMS CONTAINER
+         Cards rendered here by JS
+         ======================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container" id="terms-container">
+            <!-- Term cards inserted by dictionary.js -->
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         TERM MODAL
+         Opened when clicking a term card
+         ======================================== -->
+    <div class="modal term-modal" id="term-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass">
+            <!-- Content inserted by dictionary.js -->
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/components/nav.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/pods/term-card.js"></script>
+    <script src="js/pages/dictionary.js"></script>
+
+    <!-- Set external link from config -->
+    <script>
+        document.getElementById('full-library-link').href = CONFIG.FULL_DICTIONARY_LIBRARY_URL;
+    </script>
+
+    <!-- Mobile Spotlight -->
+    <script src="js/utils/mobile-spotlight.js"></script>
+
+</body>
+
+</html>

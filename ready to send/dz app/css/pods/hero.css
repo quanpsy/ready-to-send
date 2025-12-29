@@ -1,0 +1,257 @@
+/* ============================================
+   hero.css - Hero Section Pod
+   ============================================
+   
+   🔲 ISOLATED COMPONENT: HERO SECTIONS
+   
+   Full-height hero sections with:
+   - Gradient background glow
+   - Title + subtitle
+   - Call-to-action buttons
+   - Optional floating logo
+   
+   ============================================ */
+
+
+/* ========================================
+   HERO - Main Container
+   ----------------------------------------
+   Full viewport height hero section
+   ======================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-3xl) 0;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   HERO BACKGROUND
+   ----------------------------------------
+   Gradient glow effect
+   ======================================== */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-glow);
+    pointer-events: none;
+}
+
+/* Pulsing glow orb */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+
+/* ========================================
+   HERO CONTENT
+   ----------------------------------------
+   Two-column layout: text + logo
+   ======================================== */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ========================================
+   HERO TEXT
+   ----------------------------------------
+   Title, subtitle, CTA buttons
+   ======================================== */
+.hero-text {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.hero-title {
+    margin-bottom: var(--spacing-md);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.7s;
+}
+
+
+/* ========================================
+   HERO LOGO
+   ----------------------------------------
+   Floating animated logo
+   ======================================== */
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInScale 1s ease forwards 0.9s;
+}
+
+.logo-hero {
+    width: 100%;
+    max-width: 400px;
+    filter: drop-shadow(0 0 60px rgba(139, 92, 246, 0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* ========================================
+   SCROLL INDICATOR
+   ----------------------------------------
+   Animated line at bottom
+   ======================================== */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.2s;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--color-primary), transparent);
+    animation: scrollDown 2s ease-in-out infinite;
+}
+
+
+/* ========================================
+   SUB-PAGE HEROES
+   ----------------------------------------
+   Smaller heroes for inner pages
+   ======================================== */
+.projects-hero,
+.submit-hero,
+.tools-hero,
+.dictionary-hero {
+    padding: calc(var(--spacing-3xl) + 80px) 0 var(--spacing-3xl);
+    background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-secondary) 100%);
+    min-height: auto;
+}
+
+/* Page header inside sub-hero */
+.projects-header,
+.submit-header,
+.tools-header-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects-title,
+.submit-title,
+.tools-main-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+}
+
+.projects-subtitle,
+.submit-subtitle,
+.tools-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HERO EXTERNAL LINK
+   ----------------------------------------
+   Clickable link below hero description
+   Blue gradient matching project titles
+   ======================================== */
+.hero-external-link {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    font-size: var(--text-base);
+    font-weight: 500;
+    background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.hero-external-link:hover {
+    background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(4px);
+}
+
+/* Center the link in hero headers */
+.projects-header .hero-external-link,
+.section-header .hero-external-link {
+    display: block;
+    text-align: center;
+}
+
+
+/* ========================================
+   RESPONSIVE - Mobile
+   ======================================== */
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-logo {
+        order: -1;
+        /* Logo above text on mobile */
+    }
+
+    .logo-hero {
+        max-width: 250px;
+    }
+}
